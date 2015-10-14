@@ -1,0 +1,14 @@
+/** @define PostContainer */
+
+.PostContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.PostContainer-leftCol {
+  flex: 1;
+}
+
+.PostContainer-rightCol {
+  flex: 0 8.75rem;
+}

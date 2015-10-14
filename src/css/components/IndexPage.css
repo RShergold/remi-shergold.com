@@ -1,0 +1,25 @@
+/** @define IndexPage */
+
+.IndexPage {
+  padding-top: 4rem;
+  min-height: 100vh;
+}
+@media all and (min-width: 1050px) {
+  .IndexPage{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.IndexPage-title {
+  padding: 0 0.5rem;
+  font-size: 23px;
+  font-weight: bold;
+}
+.IndexPage-discription {
+  padding: 1rem 0.5rem;
+}
+.IndexPage-panelContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

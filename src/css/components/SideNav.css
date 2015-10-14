@@ -1,0 +1,48 @@
+/** @define SideNav */
+
+.SideNav {
+  margin-left: 1rem;
+}
+.SideNav.is-fixed {
+  position: fixed;
+  top: 0;
+}
+.SideNav-title {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 4rem 0 2rem 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+.SideNav-link {
+  display: block;
+  position: relative;
+  color: black;
+  text-decoration: none;
+  line-height: 25px;
+}
+.SideNav-link:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: -4px;
+  top: 4px;
+  bottom: 7px;
+  width: 4px;
+  background-color: var(--color-brand);
+  transition: all .25s linear;
+  opacity: 0;
+}
+.SideNav:hover .SideNav-link:before {
+  left: -4px;
+  opacity: 0;
+}
+.SideNav-link.is-current:before{
+  left: -8px;
+  opacity: 1;
+}
+.SideNav-link:hover:before {
+  left: -8px !important;
+  opacity: 1 !important;
+}

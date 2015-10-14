@@ -1,0 +1,13 @@
+# osx noise
+.DS_Store
+profile
+
+# svn & cvs
+.svn
+CVS
+
+# node
+node_modules
+
+#build directory
+build

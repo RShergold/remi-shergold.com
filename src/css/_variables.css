@@ -1,0 +1,22 @@
+
+:root {
+  --font-sansSerif: "proxima nova";
+  --font-serif: "serif";
+
+  --color-brand: #8571F3;
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-background: #F5F5F5;
+  --color-border: #EAEAEA;
+
+/*
+  --color-dark: #424242;
+  --color-light: #FFFFEE; /* #F6F6EF; #EEE6CB; #F3F0E2; #EFEFE7;*
+  --color-grey: #999999;
+  --color-red: red;
+
+  --color-card-border: #EAEAEA;
+
+  --nav-width: 12rem;
+*/
+}

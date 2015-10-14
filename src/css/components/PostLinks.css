@@ -1,0 +1,42 @@
+.PostLinks {
+}
+
+.PostLinks-title {
+  margin: 4rem 0 1rem 0;
+  text-transform: uppercase;
+  opacity: 0.3;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.PostLinks-link {
+  display: block;
+  position: relative;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--color-black);
+}
+.PostLinks-link:after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  width: 4px;
+  background-color: var(--color-brand);
+  transition: all .25s linear;
+  right: 0;
+  opacity: 0;
+}
+
+.PostLinks:hover .PostLinks-link:after {
+  right: 0;
+  opacity: 0;
+}
+.PostLinks-link.is-current:after{
+  right: -4px;
+  opacity: 1;
+}
+.PostLinks-link:hover:after {
+  right: -4px !important;
+  opacity: 1 !important;
+}

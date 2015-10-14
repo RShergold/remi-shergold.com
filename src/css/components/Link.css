@@ -1,0 +1,13 @@
+/** @define Link */
+
+.Link {
+  display: inline-block;
+  color: var(--color-brand);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-brand);
+}
+
+.Link:hover,
+.Link:active {
+  border-style: solid;
+}

@@ -1,0 +1,24 @@
+/** @define Header */
+
+.Header {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #8571F3;
+  background-image: url(https://tutsplus.github.io/casablanca-tutsplus/Part%203%20-%20Javascript/images/portfolio/work_1.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  perspective-origin: 50% 50%;
+  perspective: 1000px;
+}
+
+.Header-inner {
+  transform-style: preserve-3d;
+  height: 12rem;
+  margin: 1rem;
+}

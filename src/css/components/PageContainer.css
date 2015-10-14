@@ -1,0 +1,33 @@
+/** @define PageContainer */
+
+.PageContainer {
+  min-height: 100%;
+  display: flex;
+  background-color: var(--color-background);
+}
+.PageContainer-sideBar {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 150px;
+}
+.PageContainer-content {
+  flex-grow: 1;
+  margin-right: 2rem;
+}
+
+
+@media all and (max-width: 700px) {
+  .PageContainer-sideBar {
+    display: none;
+  }
+  .PageContainer-content {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+@media all and (max-width: 500px) {
+  .PageContainer-content {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
