@@ -2,10 +2,10 @@
   <div class="PostContainer-leftCol">
     <article class="Post">
       <h1 class="Post-title">
-        post title here
+        <?= $post->title ?>
       </h1>
       <div class="Post-content">
-        <? include partial('post/lorem') ?>
+        <?= $post->content ?>
       </div>
     </article>
   </div>

@@ -1,14 +1,17 @@
       <div class="IndexPage">
         <h1 class="IndexPage-title">
-          Title here
+          <?= $section->name ?>
         </h1>
         <p class="IndexPage-discription">
-          Some of my small personal projects. You can also find a few other bits and 
-          peices on my <a class="Link" href="#">GitHub</a> page
+          <?= $section->description ?>
         </p>
         <div class="IndexPage-panelContainer">
+          <? foreach($section->pages as $page): ?>
+            <? include partial('section/panel') ?>
+          <? endforeach; ?>
+        <!--
           <article class="Panel Panel--withImage">
-            <a class="Panel-link" href="#">
+            <a class="Panel-link" href="/projects/test-project">
               <img class="Panel-image" src="http://placehold.it/280x145">
               <div class="Panel-copy">
                 <h1 class="Panel-title">title here</h1>
@@ -18,7 +21,7 @@
           </article>
           
           <article class="Panel Panel--withImage">
-            <a class="Panel-link" href="#">
+            <a class="Panel-link" href="/projects/test-project">
               <img class="Panel-image" src="http://placehold.it/280x145">
               <div class="Panel-copy">
                 <h1 class="Panel-title">title here</h1>
@@ -28,12 +31,13 @@
           </article>
           
           <article class="Panel">
-            <a class="Panel-link" href="#">
+            <a class="Panel-link" href="/projects/test-project">
               <div class="Panel-copy">
                 <h1 class="Panel-title">title here</h1>
                 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
               </div>
             </a>
           </article>
+    -->
         </div>
       </div>

@@ -5,6 +5,8 @@
 
   include partial('head');
   include partial('sidenav');
+
+  $post = new Page();
   include partial('post/content');
   
   include partial('post/content');

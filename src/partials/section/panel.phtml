@@ -1,0 +1,11 @@
+<article class="Panel <?= $page->panel_type ?>">
+  <a class="Panel-link" href="<?= $page->src() ?>">
+    <? if ($page->image_path): ?>
+    <figure class="Panel-image" style="background-image:url('<?= $page->image_path ?>')"></figure>
+    <? endif ?>
+    <div class="Panel-copy">
+      <h1 class="Panel-title"><?= $page->title ?></h1>
+      <?= $page->excerpt ?>
+    </div>
+  </a>
+</article>

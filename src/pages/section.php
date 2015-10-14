@@ -6,7 +6,7 @@
   include partial('head');
   include partial('sidenav');
 
-  //setup first section
+  $section = new Section();
   include partial('section/content');
 
   include partial('foot');
