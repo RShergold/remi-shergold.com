@@ -3,6 +3,8 @@
 $db = new mysqli('localhost', 'root', 'root', 'remi-shergold.com'); //gitignore
 $auth = new Auth('$1$NosrB39G$w3NClFveyrSSqqMKrLFOm1');             //gitignore
 
+Nav::init();
+
 //sanatize GET
 array_walk($_GET, function(&$value, $key) use ($db){
   $value = $db->escape_string($value);

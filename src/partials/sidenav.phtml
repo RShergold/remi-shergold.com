@@ -1,11 +1,15 @@
+
   <div class="PageContainer">
     <div class="PageContainer-sideBar" id="js-stickySidebar">
       <div class="SideNav" >
         <a class="SideNav-title" href="/">
           Remi<br>Shergold
         </a>
-        <a class="SideNav-link" href="/projects">Projects</a>
-        <a class="SideNav-link is-current" href="/notes">Scrapbook</a>
+        <? foreach (Nav::$sections as $nav_section): ?>
+          <a class="SideNav-link <? if ($nav_section->is_current()) echo 'is-current' ?>" href="/<?= $nav_section->slug ?>">
+            <?= $nav_section->name ?>
+          </a>
+        <? endforeach; ?>
         <a class="SideNav-link" href="#">About Me</a>
       </div>
     </div>

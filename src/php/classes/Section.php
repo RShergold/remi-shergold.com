@@ -17,7 +17,7 @@ class Section {
   }
 
   public function is_current() {
-    return (!@$_GET['page'] && $this->slug == @$_GET['section'] );
+    return ( $this->slug == @$_GET['section'] );
   }
 
   private function get_current() {
