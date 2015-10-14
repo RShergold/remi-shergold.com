@@ -1,11 +1,10 @@
 var gulp = require('gulp')
   ,suitcss = require('gulp-suitcss')
-  ,autoprefixer = require('gulp-autoprefixer')
   ,concat = require('gulp-concat')
   ,watch = require('gulp-watch');
 
 gulp.task('move_files', function() {
-  gulp.src('./src/pages/**/*')
+  gulp.src('./src/pages/**/*',{dot:true})
     .pipe(gulp.dest('./build'));
 
   gulp.src('./src/php/**/*')
@@ -20,13 +19,9 @@ gulp.task('css', function() {
      compress: true
     ,dir: 'src/css'
   };
-  var prefex_options = {
-    browsers: ['last 2 versions'],
-    cascade: false
-  };
+
   gulp.src('./src/css/style.css')
     .pipe(suitcss(suit_options))
-    //.pipe(autoprefixer(prefex_options))
     .pipe(gulp.dest('./build/_includes/'))
 /*
   gulp.src('./src/css/admin.css')

@@ -1,0 +1,33 @@
+/** @define Message */
+
+.Message {
+  position: absolute;
+  left: 50%;
+  width: 30rem;
+  color: var(--color-white);
+  margin-left: -15rem;
+  padding: 1rem;
+  top: 1rem;
+  text-transform: uppercase;
+  z-index: 3;
+  animation: fade 2s forwards;
+}
+
+.Message--green {
+  background-color: green;
+}
+
+.Message--red {
+  background-color: red;
+}
+
+.Message--redStuck {
+  background-color: red;
+  animation: none;
+}
+
+.Message--progress {
+  background-color: yellow;
+  color: var(--color-black);
+  animation: none;
+}

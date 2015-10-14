@@ -7,3 +7,18 @@
   <meta name=viewport content="width=device-width,user-scalable=no">
 </head>
 <body>
+
+<? flash('message', function($message){ ?>
+  <div class="Message Message--<?= $message[0] ?>" >
+    <?= $message[1] ?>
+  </div>
+<? }) ?>
+
+<? flash('sign_in', function($location){ ?>
+  <div class=SignIn>
+    <form class=SignIn-inner method=post action=<?= $location ?> >
+      <input class=SignIn-password type=password placeholder=password name=pwd autofocus=autofocus
+      ><input class=SignIn-button type=submit value="sign in">
+    </form>
+  </div>
+<? }) ?>
