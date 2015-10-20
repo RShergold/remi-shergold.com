@@ -16,7 +16,7 @@ class Nav {
           self::$sections[] = new Section(get_section_attributes_from($row));
 
         if ($row['slug']) 
-          end(self::$sections)->pages[] = new Page($row);
+          end(self::$sections)->pages[] = new Post($row);
       }
       $db->next_result(); //TODO why does this query return 2 results?
 

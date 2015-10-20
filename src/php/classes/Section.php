@@ -28,12 +28,12 @@ class Section {
       WHERE sections.slug = '{$_GET['section']}' ORDER BY pages.created DESC";
 
     $result = $db->query( $sql );
-    if (!$row = $result->fetch_assoc()) die("page not found");
+    if (!$row = $result->fetch_assoc()) die('page not found');
 
     $this->attributes = get_section_attributes_from($row);
 
     do {
-      if (!empty($row['slug'])) $this->pages[] = new Page($row);
+      if (!empty($row['slug'])) $this->pages[] = new Post($row);
     } while( $row = $result->fetch_assoc() );
 
   }

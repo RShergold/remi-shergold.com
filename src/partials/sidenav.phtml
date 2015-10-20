@@ -10,7 +10,7 @@
             <?= $nav_section->name ?>
           </a>
         <? endforeach; ?>
-        <a class="SideNav-link" href="#">About Me</a>
+        <a class="SideNav-link <?= ($_SERVER['REQUEST_URI'] == '/about') ? 'is-current' : '' ?>" href="/about">About Me</a>
       </div>
     </div>
     <div class="PageContainer-content">

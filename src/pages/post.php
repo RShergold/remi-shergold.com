@@ -1,12 +1,10 @@
 <?php 
   include '_php/app.php';
 
-  // do page setup
+  $post = new Post();
 
   include partial('head');
   include partial('sidenav');
-
-  $post = new Page();
   include partial('post/content');
   
   include partial('post/content');

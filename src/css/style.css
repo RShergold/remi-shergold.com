@@ -17,9 +17,10 @@
 
 @import './components/IndexPage';
 
-
 @import './components/Panel';
 @import './components/HomeCard';
+
+@import './components/About';
 
 @import './components/PostContainer';
 @import './components/PostLinks';

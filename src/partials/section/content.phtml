@@ -1,43 +1,13 @@
-      <div class="IndexPage">
-        <h1 class="IndexPage-title">
-          <?= $section->name ?>
-        </h1>
-        <p class="IndexPage-discription">
-          <?= $section->description ?>
-        </p>
-        <div class="IndexPage-panelContainer">
-          <? foreach($section->pages as $page): ?>
-            <? include partial('section/panel') ?>
-          <? endforeach; ?>
-        <!--
-          <article class="Panel Panel--withImage">
-            <a class="Panel-link" href="/projects/test-project">
-              <img class="Panel-image" src="http://placehold.it/280x145">
-              <div class="Panel-copy">
-                <h1 class="Panel-title">title here</h1>
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-              </div>
-            </a>
-          </article>
-          
-          <article class="Panel Panel--withImage">
-            <a class="Panel-link" href="/projects/test-project">
-              <img class="Panel-image" src="http://placehold.it/280x145">
-              <div class="Panel-copy">
-                <h1 class="Panel-title">title here</h1>
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-              </div>
-            </a>
-          </article>
-          
-          <article class="Panel">
-            <a class="Panel-link" href="/projects/test-project">
-              <div class="Panel-copy">
-                <h1 class="Panel-title">title here</h1>
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-              </div>
-            </a>
-          </article>
-    -->
-        </div>
-      </div>
+<section class="IndexPage">
+  <h1 class="IndexPage-title">
+    <?= $section->name ?>
+  </h1>
+  <p class="IndexPage-discription">
+    <?= $section->description ?>
+  </p>
+  <div class="IndexPage-panelContainer">
+    <? foreach($section->pages as $page): ?>
+      <? include partial('section/panel') ?>
+    <? endforeach; ?>
+  </div>
+</section>

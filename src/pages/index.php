@@ -17,5 +17,8 @@
   $section = new Section();
   include partial('section/content');
 
+  //about section
+  include partial('about/main');
+
   include partial('foot');
 
