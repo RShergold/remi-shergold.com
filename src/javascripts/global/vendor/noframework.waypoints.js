@@ -4,7 +4,7 @@ Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
-(function() {
+;(function() {
   'use strict'
 
   var keyCounter = 0

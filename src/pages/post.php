@@ -3,10 +3,15 @@
 
   $post = new Post();
 
-  include partial('head');
-  include partial('sidenav');
-  include partial('post/content');
-  
-  include partial('post/content');
+  if (RENDER_CONTENT_ONLY) {
 
-  include partial('foot');
+    include partial('post/content');
+
+  } else {
+
+    include partial('head');
+    include partial('sidenav');
+    include partial('post/content');
+    include partial('foot');
+
+  }

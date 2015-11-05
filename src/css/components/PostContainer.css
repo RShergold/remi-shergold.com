@@ -5,6 +5,28 @@
   min-height: 100vh;
 }
 
+.PostContainer.is-enteringStageRight {
+  animation-name: enterRight;
+  animation-duration: 1s;
+}
+.PostContainer.is-exitingStageLeft {
+  transition: transform 1s, opacity 1s;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+
+@keyframes enterRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .PostContainer-leftCol {
   flex: 1;
 }

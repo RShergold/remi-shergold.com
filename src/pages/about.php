@@ -1,10 +1,14 @@
 <?php 
   include '_php/app.php';
 
-  include partial('head');
-  include partial('sidenav');
+  if (RENDER_CONTENT_ONLY) {
 
+    include partial('about/main');
 
-  include partial('about/main');
+  } else {
 
-  include partial('foot');
+    include partial('head');
+    include partial('sidenav');
+    include partial('about/main');
+    include partial('foot');
+  }

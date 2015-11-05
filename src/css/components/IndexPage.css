@@ -11,6 +11,13 @@
     margin-right: auto;
   }
 }
+
+.IndexPage.is-exitingStageLeft {
+  transition: transform 1s, opacity 1s;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
 .IndexPage-title {
   padding: 0 0.5rem;
   font-size: 23px;

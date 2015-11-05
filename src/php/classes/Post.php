@@ -48,7 +48,6 @@ class Post {
     global $db;
     $result = $db->query(" SELECT * FROM pages WHERE slug='{$_GET['page']}' AND section_slug='{$_GET['section']}';");
     
-    echo "<pre>".$db->error."</pre>";
     if ( !$this->attributes = $result->fetch_assoc() ) die ('page not found!');
     $this->set_image_path();
   }

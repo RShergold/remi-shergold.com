@@ -2,10 +2,10 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^about$ /about.php [L]
-RewriteRule ^([\w-]+)$ /section.php?section=$1 [L]
+RewriteRule ^about$ /about.php [L,QSA]
+RewriteRule ^([\w-]+)$ /section.php?section=$1 [L,QSA]
 RewriteRule ^([\w-]+)/new$ /input.php?new=true&section=$1 [L]
-RewriteRule ^([\w-]+)/([\w-]+)$ /post.php?section=$1&page=$2 [L]
+RewriteRule ^([\w-]+)/([\w-]+)$ /post.php?section=$1&page=$2 [L,QSA]
 RewriteRule ^([\w-]+)/([\w-]+)/edit$ /input.php?edit=true&section=$1&page=$2 [L]
 
 RewriteCond %{QUERY_STRING} ^(.+)$

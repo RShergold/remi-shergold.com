@@ -1,13 +1,17 @@
 <?php 
   include '_php/app.php';
 
-  // do page setup
-
-  include partial('head');
-  include partial('sidenav');
-
   $section = new Section();
-  include partial('section/content');
+  if (RENDER_CONTENT_ONLY) {
 
-  include partial('foot');
+    include partial('section/content');
+
+  } else {
+
+    include partial('head');
+    include partial('sidenav');
+    include partial('section/content');
+    include partial('foot');
+
+  }
 
