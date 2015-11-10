@@ -6,26 +6,12 @@
 }
 
 .PostContainer.is-enteringStageRight {
-  animation-name: enterRight;
-  animation-duration: 1s;
+  animation: enterRight 0.5s;
 }
-.PostContainer.is-exitingStageLeft {
-  transition: transform 1s, opacity 1s;
-  transform: translateX(-50%);
-  opacity: 0;
+.PostContainer.is-exitingStageRight {
+  animation: exitRight 0.5s forwards;
 }
 
-
-@keyframes enterRight {
-  from {
-    transform: translateX(50%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
 .PostContainer-leftCol {
   flex: 1;

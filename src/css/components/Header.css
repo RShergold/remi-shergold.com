@@ -15,6 +15,12 @@
 
   perspective-origin: 50% 50%;
   perspective: 1000px;
+
+  transition: opacity 0.5s;
+}
+
+.Header.is-fadingOut {
+  opacity: 0;
 }
 
 .Header-inner {

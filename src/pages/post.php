@@ -10,6 +10,7 @@
   } else {
 
     include partial('head');
+include partial('home/header');
     include partial('sidenav');
     include partial('post/content');
     include partial('foot');

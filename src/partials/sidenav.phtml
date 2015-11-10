@@ -1,7 +1,7 @@
 
   <div class="PageContainer">
-    <div class="PageContainer-sideBar" id="js-stickySidebar">
-      <div class="SideNav" >
+    <div class="PageContainer-sideBar" id="js-sideNavContainer">
+      <div class="SideNav" id="js-sideNav">
         <a class="SideNav-title" href="/">
           Remi<br>Shergold
         </a>
@@ -13,4 +13,4 @@
         <a class="SideNav-link <?= ($_SERVER['REQUEST_URI'] == '/about') ? 'is-current' : '' ?>" href="/about">About Me</a>
       </div>
     </div>
-    <div class="PageContainer-content">
+    <div id="js-stage" class="PageContainer-content">
