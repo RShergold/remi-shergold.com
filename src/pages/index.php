@@ -5,8 +5,10 @@
   $page = new Page();
   $page->isHomePage = true;
 
-  include partial('head');
-  include partial('sidenav');
+  if (RENDER_CONTENT_ONLY == false) {
+    include partial('head');
+    include partial('sidenav');
+  }
 
   //setup first section
   $_GET['section'] = 'projects';
@@ -21,5 +23,7 @@
   //about section
   include partial('about/main');
 
-  include partial('foot');
+  if (RENDER_CONTENT_ONLY == false) {
+    include partial('foot');
+  }
 

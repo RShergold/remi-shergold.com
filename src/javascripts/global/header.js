@@ -34,6 +34,7 @@ app.header = {
       //TODO make more fancy
       setTimeout(function() { 
         document.getElementById('js-header').style.display = (e.detail.depth) ? 'none' : 'flex';
+        Waypoint.Context.refreshAll();
       }, 500);
     }
   }

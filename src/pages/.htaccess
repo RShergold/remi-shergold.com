@@ -9,8 +9,9 @@ RewriteRule ^([\w-]+)/([\w-]+)$ /post.php?section=$1&page=$2 [L,QSA]
 RewriteRule ^([\w-]+)/([\w-]+)/edit$ /input.php?edit=true&section=$1&page=$2 [L]
 
 RewriteCond %{QUERY_STRING} ^(.+)$
+RewriteCond %{QUERY_STRING} !^(content_only=)
 RewriteRule ^$ /search.php [L]
 
-RewriteRule ^$ /index.php?
+RewriteRule ^$ /index.php? [QSA]
 
 </IfModule>

@@ -5,7 +5,7 @@ app.stage = {
   stage_element: document.getElementById('js-stage'),
 
   stage_is_clear: false,
-  element_to_append: null,
+  pages_to_append: null,
 
   clear: function(transition) {
     app.scroll_manager.destroy_waypoints();
@@ -18,19 +18,34 @@ app.stage = {
         page.parentElement.removeChild(page)
       }
       this.stage_is_clear = true;
-      this._append_element_when_stage_is_clear();
+      this._append_pages_when_stage_is_clear();
     },500);
   },
 
   add_page: function(html, tag_class) {
-    //doesnt work for multiple elements
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = html;
-    const new_element = wrapper.firstChild;
-    new_element.classList.add(tag_class);
-    this._append_element_when_stage_is_clear(new_element);
+
+    const pages = document.createElement('div');
+    pages.innerHTML = html;
+    for (let i=0; i<pages.children.length; i++) {
+      pages.children[i].classList.add(tag_class);
+    }
+    this._append_pages_when_stage_is_clear(pages.children);
   },
 
+  _append_pages_when_stage_is_clear: function(pages) {
+
+    this.pages_to_append = pages || this.pages_to_append;
+    if (this.stage_is_clear && this.pages_to_append) {
+      while (this.pages_to_append.length) {
+        this.stage_element.appendChild(this.pages_to_append[0]);
+      }
+      app.scroll_manager.create_waypoints();
+      this.pages_to_append = null;
+      this.stage_is_clear = false;
+    }
+  }
+
+  /*
   _append_element_when_stage_is_clear: function(new_element) {
 
     this.element_to_append = new_element || this.element_to_append;
@@ -41,6 +56,7 @@ app.stage = {
       this.stage_is_clear = false;
     } 
   }
+  */
 
 }
 
