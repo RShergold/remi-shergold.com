@@ -23,7 +23,7 @@ class Section {
   private function get_current() {
     global $db;
 
-    $sql = "SELECT sections.name AS section_name, sections.description AS section_description, 
+    $sql = "SELECT sections.title AS section_title, sections.description AS section_description, 
       pages.* FROM sections LEFT JOIN pages ON pages.section_slug = sections.slug
       WHERE sections.slug = '{$_GET['section']}' ORDER BY pages.created DESC";
 

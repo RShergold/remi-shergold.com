@@ -3,14 +3,14 @@
 class Page {
 
   public $title = 'Remi Shergold';
-  public $description = '';
+  public $description = 'I work for Hatch making web and mobile apps';
   public $isHomePage = false;
 
   function __construct($root_object = null) {
 
-    if (get_class($root_object) == 'Post') {
+    if ($root_object) {
       $this->title = "$root_object->title | $this->title";
-      $this->description = $root_object->excerpt;
+      $this->description = strip_tags($root_object->description);
     }
   }
 
