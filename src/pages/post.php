@@ -2,6 +2,7 @@
   include '_php/app.php';
 
   $post = new Post();
+  $page = new Page($post);
 
   if (RENDER_CONTENT_ONLY) {
 
@@ -10,7 +11,6 @@
   } else {
 
     include partial('head');
-include partial('home/header');
     include partial('sidenav');
     include partial('post/content');
     include partial('foot');

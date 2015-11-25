@@ -2,9 +2,10 @@
   include '_php/app.php';
 
   // do page setup
+  $page = new Page();
+  $page->isHomePage = true;
 
   include partial('head');
-  include partial('home/header');
   include partial('sidenav');
 
   //setup first section

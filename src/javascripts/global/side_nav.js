@@ -1,31 +1,34 @@
 var app = app || {};
 
-app.sideNav = (function(){
+app.side_nav = {
 
-  
-  const _side_nav_container = document.getElementById('js-sideNavContainer');
-  const _side_nav = document.getElementById('js-sideNav');
+  _nav_element: document.getElementById('js-sideNav'),
+  _container_element: document.getElementById('js-sideNavContainer'),
+  _path_map: {},
 
-  //create waypoint
-  const waypoint = new Waypoint({
-    element: _side_nav_container,
-    handler: (direction) => _side_nav.classList.toggle('is-fixed',(direction=='down'))
-  })
+  init: function() {
+    new Waypoint({
+      element: this._container_element,
+      handler: (direction) => this._nav_element.classList.toggle('is-fixed',(direction=='down'))
+    })
 
-  //create link map
-  var path_map = {};
-  const links = Array.from(_side_nav.getElementsByTagName('a'));
-  for ( let link of links ) {
-    const path = link.getAttribute('href');
-    path_map[path] = link;
-  }
-
-  //listen for changes to state
-  document.addEventListener('onstatechange',function(e){
-    const new_path = e.detail.active_path.replace(/^\/([^\/]*).*$/, '/$1'); //get the first part of path
-    for ( var path in path_map ) {
-      path_map[path].classList.toggle('is-current', path == new_path)
+    const links = Array.from(this._nav_element.getElementsByTagName('a'));
+    for ( let link of links ) {
+      const path = link.getAttribute('href');
+      this._path_map[path] = link;
     }
-  });
 
-}());
+    document.addEventListener('onstatechange', this._state_changed.bind(this));
+  },
+
+  _state_changed: function(e) {
+    const new_path = e.detail.path.replace(/^\/([^\/]*).*$/, '/$1'); //get the first part of path
+    for ( let path in this._path_map ) {
+      this._path_map[path].classList.toggle('is-current', path == new_path)
+    }
+    if (!e.detail.is_home_scroll_event) {
+      this._nav_element.classList.toggle('is-fixed',e.detail.depth)
+    }
+  }
+  
+}

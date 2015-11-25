@@ -1,7 +1,14 @@
 
+app.header.init();
+app.side_nav.init();
 
-var app = app || {};
-app.state = new State();
-app.page_content = new PageContent();
-app.transition_page = new TransitionPage();
+
+// if browser can support then
+  app.state = new State(location.pathname);
+  app.content.init();
+
+  app.click_manager.init();
+  app.history_manager.init();
+  app.scroll_manager.init();
+
 

@@ -1,5 +1,6 @@
 <?php
 sleep(2);
+
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 
 $db = new mysqli('localhost', 'root', 'root', 'remi-shergold.com'); //gitignore

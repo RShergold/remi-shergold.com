@@ -1,25 +1,24 @@
-class PageContent {
+var app = app || {};
 
-  constructor() {
-    this._cache = {};
-    this.cache_current_pages();
-  }
+app.content = {
 
-  cache_current_pages() {
+  _cache: {},
+
+  init: function() {
     let pages = Array.from(document.querySelectorAll('[data-path]'));
     for ( let page of pages ) {
       this._cache[page.dataset.path] = page.outerHTML;
     }
-  }
+  },
 
-  get_page(path) {
+  get_page: function(path) {
 
     return new Promise((resolve, reject)=>{
       if (path in this._cache) {
         //return page from cache
         resolve(this._cache[path]);
       } else {
-        //return page from network
+        //return page from server
         var client = new XMLHttpRequest();
         client.open('GET', `http://remi-shergold.com${path}?content_only=true`);
         client.send();
@@ -37,5 +36,6 @@ class PageContent {
         };
       }
     });
+
   }
 }
