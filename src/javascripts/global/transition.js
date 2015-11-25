@@ -4,11 +4,11 @@ app.transition = {
 
   to: function(new_state) {
     const transition = this._transition_for(app.state.depth, new_state.depth);
-    if (!transition) return;
-    console.log('do transition: ' + transition);
-    this._do[transition](new_state);
-    app.state = new_state;
-    new_state.announce();
+    if (transition) {
+      this._do[transition](new_state);
+      app.state = new_state;
+      new_state.announce();
+    }
   },
 
   // transitions
