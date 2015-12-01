@@ -13,39 +13,8 @@
 
 .HomeCard-name {
   width: 85%;
-  stroke: #35434D;
   margin-bottom: 1.5rem;
 }
-
-.HomeCard-name-remi {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 1s linear forwards;
-}
-
-.HomeCard-name-dot {
-  stroke-dasharray: 20;
-  stroke-dashoffset: 20;
-  animation: draw .2s linear 1s forwards;
-}
-
-.HomeCard-name-shergold {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: draw 2s linear 1.2s forwards;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@-webkit-keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 
 .HomeCard-masthead {
   opacity: 0;

@@ -4,6 +4,9 @@ var gulp = require('gulp')
   ,babel = require('gulp-babel')
   ,watch = require('gulp-watch');
 
+
+gulp.task('default', ['move_files', 'css', 'js']);
+
 gulp.task('move_files', function() {
   gulp.src('./src/pages/**/*',{dot:true})
     .pipe(gulp.dest('./build'));
@@ -13,6 +16,11 @@ gulp.task('move_files', function() {
 
   gulp.src('./src/partials/**/*')
     .pipe(gulp.dest('./build/_php/partials'));
+
+  gulp.src('./src/assets/**/*')
+    .pipe(gulp.dest('./build/_includes'));
+
+
 });
 
 gulp.task('css', function() {
@@ -55,7 +63,7 @@ gulp.task('js', function() {
 
 
 
-gulp.task("watch", function() {
+gulp.task('watch', function() {
   gulp.watch('./src/pages/**/*', ['move_files']);
   gulp.watch('./src/css/**/*.css', ['css']);
   gulp.watch('./src/javascripts/**/*.js', ['js']);
