@@ -4,7 +4,7 @@ app.history_manager = {
 
   init: function() {
     //listen for changes to state
-    document.addEventListener('onstatechange',function(e){
+    document.addEventListener('onstatechange', function(e){
       const state = e.detail
       if (!state.is_home_scroll_event && window.location.pathname != state.path) {
         history.pushState(null, "title here", state.path);
@@ -12,7 +12,7 @@ app.history_manager = {
     });
 
     //listen for back/next button
-    window.addEventListener('popstate', function(event) {
+    window.addEventListener('popstate', function(e) {
       app.transition.to( new State(document.location.pathname) );
     });
   },
