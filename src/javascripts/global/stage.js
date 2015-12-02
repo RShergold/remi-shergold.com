@@ -43,6 +43,14 @@ app.stage = {
       this.pages_to_append = null;
       this.stage_is_clear = false;
     }
+  },
+
+  find_page_element_for: function(path) {
+    const pages = document.querySelectorAll('#js-stage [data-path]');
+    for (let i=0; i<pages.length; i++) {
+      if ( pages[i].dataset.path == path ) return pages[i];
+    }
+    throw `could not find page with path ${path}`;
   }
 
   /*

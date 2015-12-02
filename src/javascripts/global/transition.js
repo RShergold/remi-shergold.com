@@ -4,8 +4,8 @@ app.transition = {
 
   to: function(new_state) {
     const transition = this._transition_for(app.state.depth, new_state.depth);
-    if (transition) {
-      this._do[transition](new_state);
+    this._do[transition](new_state);
+    if (transition != 'home_scroll') {
       app.state = new_state;
       new_state.announce();
     }
@@ -13,8 +13,14 @@ app.transition = {
 
   // transitions
   _do: {
-    scroll: function(new_state) {
-
+    home_scroll: function(new_state) {
+      const target = ( new_state.depth ) 
+                      ? app.stage.find_page_element_for( new_state.path ) 
+                      : document.body;
+      app.scroll_to( target );
+    },
+    post_scroll: function(new_state) {
+      console.log('post_scroll');
     },
     fade: function(new_state) {
       app.stage.clear('is-exitingFadingBack');
@@ -54,9 +60,9 @@ app.transition = {
   // helpers
   _transition_for: function(current_depth, new_depth) {
     let transition_map = {
-      0: { 0: false, 1: 'scroll', 2: 'forward' },
+      0: { 0: 'home_scroll', 1: 'home_scroll', 2: 'forward' },
       1: { 0: 'back', 1: 'fade', 2: 'forward' },
-      2: { 0: 'back', 1: 'back', 2: 'scroll' }
+      2: { 0: 'back', 1: 'back', 2: 'post_scroll' }
     }
     return transition_map[current_depth][new_depth];
   }

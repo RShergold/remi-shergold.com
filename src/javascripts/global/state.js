@@ -2,7 +2,7 @@ class State {
 
   constructor(path, is_home_scroll_event = false) {
     this.path = path;
-    this.is_home_scroll_event = is_home_scroll_event
+    this.is_home_scroll_event = is_home_scroll_event;
     this.depth = this.depth_for(path);
   }
 
