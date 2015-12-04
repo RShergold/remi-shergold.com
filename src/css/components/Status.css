@@ -1,0 +1,38 @@
+/** @define Status */
+
+.Status {
+  text-align: center;
+}
+
+.Status--fullScreen {
+  position: fixed;
+  top: 50vh;
+  right: 50vw;
+  background-color: grey;
+  width: 300px;
+  height: 50px;
+  margin-right: -150px;
+}
+
+.Status--bottom {
+  display: block;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-bottom: 1rem;
+}
+
+.Status.is-downloading:before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: blue;
+}
+
+.Status.is-error {
+
+}

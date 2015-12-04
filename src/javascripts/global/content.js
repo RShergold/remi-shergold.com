@@ -11,13 +11,16 @@ app.content = {
     }
   },
 
-  get_page: function(path) {
+  get_page_for: function(state) {
+    const path = state.path
 
     return new Promise((resolve, reject)=>{
       if (path in this._cache) {
         //return page from cache
         resolve(this._cache[path]);
       } else {
+        const event = new CustomEvent('ondownloadbegin', {'detail': state});
+        document.dispatchEvent(event);
         //return page from server
         var client = new XMLHttpRequest();
         client.open('GET', `http://remi-shergold.com${path}?content_only=true`);
@@ -25,6 +28,8 @@ app.content = {
         self = this;
         client.onload = function(){
           if (this.status == 200) {
+            const event = new CustomEvent('ondownloadfinish', {'detail': state});
+            document.dispatchEvent(event);
             self._cache[path] = this.response;
             resolve(this.response);
           } else {

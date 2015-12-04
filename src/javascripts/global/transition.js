@@ -14,7 +14,6 @@ app.transition = {
       } else {
         this._append_and_scroll_to( new_state );
       }
-      console.log('do more!');
     }
   },
 
@@ -39,7 +38,7 @@ app.transition = {
 
   _clear_stage_and_load: function(new_state, transition) {
     app.stage.clear( transition.fade_out_class );
-    app.content.get_page(new_state.path).then(
+    app.content.get_page_for(new_state).then(
       (page_html)=> {
         app.state = new_state;
         new_state.announce();
@@ -52,7 +51,7 @@ app.transition = {
   },
 
   _append_and_scroll_to: function(new_state) {
-    app.content.get_page(new_state.path).then(
+    app.content.get_page_for(new_state).then(
       (page_html)=> {
         app.stage.append_page(page_html);
         app.scroll_to( app.stage.page_for( new_state ) );

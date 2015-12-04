@@ -6,6 +6,7 @@ app.side_nav.init();
 // if browser can support then
   app.state = new State(location.pathname);
 
+  app.status.init();
   app.content.init();
   app.stage.init();
 

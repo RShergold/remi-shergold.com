@@ -14,6 +14,7 @@
 
 @import './components/SignIn';
 @import './components/Message';
+@import './components/Status';
 
 @import './components/IndexPage';
 
