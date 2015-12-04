@@ -9,10 +9,10 @@ app.transition = {
       app.scroll_to( page_on_stage );
     } else {
       const transition = this._transition_for( new_state );
-      if (transition.clear_stage) {
-        this._clear_stage_and_load( new_state, transition );
-      } else {
+      if (transition.append_and_scroll) {
         this._append_and_scroll_to( new_state );
+      } else {
+        this._clear_stage_and_load( new_state, transition );
       }
     }
   },
@@ -20,17 +20,17 @@ app.transition = {
   _transition_for: function(new_state) {
     const transition_map = {
       0: {
-        2: {clear_stage: true, fade_out_class: 'is-exitingStageLeft', fade_in_class: 'is-enteringStageRight'}
+        2: {fade_out_class: 'is-exitingStageLeft', fade_in_class: 'is-enteringStageRight'}
       },
       1: {
-        0: {clear_stage: true, fade_out_class: 'is-exitingStageRight', fade_in_class: 'is-enteringStageLeft'},
-        1: {clear_stage: true, fade_out_class: 'is-exitingFadingBack', fade_in_class: 'is-enteringFadingForward'},
-        2: {clear_stage: true, fade_out_class: 'is-exitingStageLeft', fade_in_class: 'is-enteringStageRight'}
+        0: {fade_out_class: 'is-exitingStageRight', fade_in_class: 'no-animation'},
+        1: {fade_out_class: 'is-exitingFadingBack', fade_in_class: 'is-enteringFadingForward'},
+        2: {fade_out_class: 'is-exitingStageLeft', fade_in_class: 'is-enteringStageRight'}
       },
       2: {
-        0: {clear_stage: true, fade_out_class: 'is-exitingStageRight', fade_in_class: 'is-enteringStageLeft'},
-        1: {clear_stage: true, fade_out_class: 'is-exitingStageRight', fade_in_class: 'is-enteringStageLeft'},
-        2: {clear_stage: false}
+        0: {fade_out_class: 'is-exitingStageRight', fade_in_class: 'is-enteringStageLeft'},
+        1: {fade_out_class: 'is-exitingStageRight', fade_in_class: 'is-enteringStageLeft'},
+        2: {append_and_scroll: true}
       }
     }
     return transition_map[app.state.depth][new_state.depth];

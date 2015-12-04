@@ -33,7 +33,7 @@ app.header = {
     if (!e.detail.is_home_scroll_event) {
       //TODO make more fancy
       //setTimeout(function() { 
-        document.getElementById('js-header').style.display = (e.detail.depth) ? 'none' : 'flex';
+        document.getElementById('js-header').style.display = (e.detail.is_homepage) ? 'flex' : 'none';
         Waypoint.Context.refreshAll();
       //}, 500);
     }

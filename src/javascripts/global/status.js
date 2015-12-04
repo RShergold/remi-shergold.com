@@ -16,11 +16,13 @@ app.status = {
   _download_begin: function(e) {
     if (app.state.depth == 2 && e.detail.depth == 2) {
       this.downloading_element.className = 'Status Status--bottom is-downloading';
+      this.stage_element.appendChild( this.downloading_element );
+      app.scroll_to( this.downloading_element );
     } else {
       this.downloading_element.className = 'Status Status--fullScreen is-downloading';
+      this.stage_element.appendChild( this.downloading_element );
     }
-    this.stage_element.appendChild( this.downloading_element );
-    app.scroll_to( this.downloading_element );
+    
 
   },
 

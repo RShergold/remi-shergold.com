@@ -30,6 +30,9 @@
 .IndexPage.is-exitingStageLeft {
   animation: exitLeft 0.5s forwards;
 }
+.IndexPage.is-exitingStageRight {
+  animation: exitRight 0.5s forwards;
+}
 
 
 
