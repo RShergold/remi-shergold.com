@@ -6,13 +6,18 @@ class State {
     this.depth = this.depth_for(path);
   }
 
-  // helpers
-  depth_for(path) {
-    return (path.match(/(\/[^\/]+)/g) || [] ).length;
+  get is_homepage() {
+    return !this.depth;
   }
 
   announce() {
     const event = new CustomEvent('onstatechange', {'detail': this});
     document.dispatchEvent(event);
   }
+
+  // helpers
+  depth_for(path) {
+    return (path.match(/(\/[^\/]+)/g) || [] ).length;
+  }
+
 }

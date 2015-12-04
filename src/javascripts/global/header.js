@@ -32,10 +32,10 @@ app.header = {
   _on_state_change: function(e) {
     if (!e.detail.is_home_scroll_event) {
       //TODO make more fancy
-      setTimeout(function() { 
+      //setTimeout(function() { 
         document.getElementById('js-header').style.display = (e.detail.depth) ? 'none' : 'flex';
         Waypoint.Context.refreshAll();
-      }, 500);
+      //}, 500);
     }
   }
 

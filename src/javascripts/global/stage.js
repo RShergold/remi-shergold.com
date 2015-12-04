@@ -3,26 +3,47 @@ var app = app || {};
 app.stage = {
 
   stage_element: document.getElementById('js-stage'),
+  pages: {},
 
   stage_is_clear: false,
   pages_to_append: null,
 
+  init: function() {
+    this._update_list_of_pages_on_stage();
+  },
+
+  _update_list_of_pages_on_stage: function() {
+    this.pages = {};
+    const pages = document.querySelectorAll('#js-stage [data-path]');
+    for (let i=0; i<pages.length; i++) {
+      this.pages[pages[i].dataset.path] = pages[i];
+    }
+  },
+
+  page_for: function(state) {
+    // if on homepage and wanting to scoll to the top, return doc.body
+    // if state refers to a page on stage, return that page
+    // else return 'undefined'
+    return (app.state.is_homepage && state.is_homepage) ? document.body : this.pages[state.path];
+  },
+
   clear: function(transition) {
     app.scroll_manager.destroy_waypoints();
-    const curret_pages = Array.from(this.stage_element.children)
-    for (let page of curret_pages) {
-      page.classList.add(transition)
+    for (let path in this.pages) {
+      this.pages[path].classList.add(transition);
     }
     setTimeout(()=>{
-      for (let page of curret_pages) {
-        page.parentElement.removeChild(page)
+      for (let path in this.pages) {
+        this.stage_element.removeChild(this.pages[path]);
+        delete this.pages[path];
       }
       this.stage_is_clear = true;
       this._append_pages_when_stage_is_clear();
     },500);
+
   },
 
-  add_page: function(html, tag_class) {
+  change_page: function(html, tag_class) {
 
     const pages = document.createElement('div');
     pages.innerHTML = html;
@@ -32,6 +53,13 @@ app.stage = {
     this._append_pages_when_stage_is_clear(pages.children);
   },
 
+  append_page: function(html) {
+    const page_element = document.createElement('div');
+    page_element.innerHTML = html;
+    this.stage_element.appendChild(page_element.children[0]);
+    this._update_list_of_pages_on_stage();
+  },
+
   _append_pages_when_stage_is_clear: function(pages) {
 
     this.pages_to_append = pages || this.pages_to_append;
@@ -39,32 +67,12 @@ app.stage = {
       while (this.pages_to_append.length) {
         this.stage_element.appendChild(this.pages_to_append[0]);
       }
+      this._update_list_of_pages_on_stage();
       app.scroll_manager.create_waypoints();
       this.pages_to_append = null;
       this.stage_is_clear = false;
     }
-  },
-
-  find_page_element_for: function(path) {
-    const pages = document.querySelectorAll('#js-stage [data-path]');
-    for (let i=0; i<pages.length; i++) {
-      if ( pages[i].dataset.path == path ) return pages[i];
-    }
-    throw `could not find page with path ${path}`;
   }
-
-  /*
-  _append_element_when_stage_is_clear: function(new_element) {
-
-    this.element_to_append = new_element || this.element_to_append;
-    if (this.stage_is_clear && this.element_to_append) {
-      this.stage_element.appendChild(this.element_to_append);
-      app.scroll_manager.create_waypoints();
-      this.element_to_append = null;
-      this.stage_is_clear = false;
-    } 
-  }
-  */
 
 }
 
