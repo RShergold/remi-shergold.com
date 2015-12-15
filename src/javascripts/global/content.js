@@ -21,6 +21,7 @@ app.content = {
       } else {
         const event = new CustomEvent('ondownloadbegin', {'detail': state});
         document.dispatchEvent(event);
+        return;
         //return page from server
         var client = new XMLHttpRequest();
         client.open('GET', `http://remi-shergold.com${path}?content_only=true`);
@@ -36,8 +37,8 @@ app.content = {
             reject(this.statusText);
           }
         };
-        client.onerror = function(){
-          reject(this.statusText);
+        client.onerror = function(e){
+          reject('The page can not be downloaded. Try refreshing.');
         };
       }
     });

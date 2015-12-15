@@ -27,6 +27,7 @@ app.scroll_manager = {
   },
 
   _scroll_handler: function(direction) {
+    if (app.state.is_admin_area) return;
     const current_page = (direction == 'down') ? this : this.previous();
     if (current_page && current_page.element.dataset.path != app.state.path) {
       const new_state = new State( current_page.element.dataset.path, !app.state.depth );

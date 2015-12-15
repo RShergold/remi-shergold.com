@@ -72,6 +72,26 @@ app.stage = {
       this.pages_to_append = null;
       this.stage_is_clear = false;
     }
+  },
+
+  add_status: function(element, position = 0) {
+    /*position is where to insert the element
+      0 - bottom of stage
+      1 - bottom of current post
+    */
+debugger;
+
+    switch(position) {
+    case 1:
+        var current_post = this.page_for(app.state),
+          left_col = current_post.getElementsByClassName('PostContainer-leftCol')[0]
+
+        left_col.appendChild(element);
+        break;
+    default:
+        this.stage_element.appendChild(element);
+}
+
   }
 
 }

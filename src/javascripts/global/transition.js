@@ -45,6 +45,7 @@ app.transition = {
         app.stage.change_page(page_html, transition.fade_in_class);
       },
       (error)=> {
+        app.status.error(error);
         console.log(error);
       }
     );
@@ -57,6 +58,7 @@ app.transition = {
         app.scroll_to( app.stage.page_for( new_state ) );
       },
       (error)=> {
+        app.status.error(error);
         console.log(error);
       }
     );
