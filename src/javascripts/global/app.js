@@ -1,17 +1,7 @@
 
+app.state = new State(location.pathname);
+
+
 app.header.init();
 app.side_nav.init();
-
-
-// if browser can support then
-  app.state = new State(location.pathname);
-
-  app.status.init();
-  app.content.init();
-  app.stage.init();
-
-  app.click_manager.init();
-  app.history_manager.init();
-  app.scroll_manager.init();
-
-
+app.scroll_manager.init();
