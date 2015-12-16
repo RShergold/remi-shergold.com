@@ -18,5 +18,13 @@
 }
 
 .PostContainer-rightCol {
+  display: none;
   flex: 0 8.75rem;
 }
+
+@media all and (min-width: 1000px) {
+  /* desktop */
+  .PostContainer-rightCol {
+    display: block;
+  }
+} 

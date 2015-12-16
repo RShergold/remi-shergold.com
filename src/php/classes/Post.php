@@ -38,11 +38,12 @@ class Post {
   public function src() {
     return "/$this->section_slug/$this->slug";
   }
-/*
+
   public function html_content() {
-    return Markdown::render($this->content, $this->id);
+    $Parsedown = new Parsedown();
+    return $Parsedown->text($this->content);
   }
-*/
+
   // Actions 
   private function get_current() {
     global $db;
@@ -111,7 +112,8 @@ class Post {
   }
 
   private function set_image_path() {
-    $this->image_path = empty($this->attributes['image']) ? false : "/_public/images/$this->id/$this->image";
+    //$this->image_path = empty($this->attributes['image']) ? false : "/_public/images/$this->id/$this->image";
+    $this->image_path = empty($this->attributes['image']) ? false : $this->image;
   }
 
 }

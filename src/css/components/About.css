@@ -24,6 +24,21 @@
 
 .About-title {
   padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
   font-size: 23px;
   font-weight: bold;
+}
+
+.About-frame {
+  margin: 0 0.5rem;
+  background-color: white;
+  border: 1px solid var(--color-border);
+}
+
+.About-image {
+  width: 100%;
+}
+
+.About-content {
+  padding: 2rem 1rem;
 }

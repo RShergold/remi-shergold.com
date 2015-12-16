@@ -1,7 +1,10 @@
 <article class="Panel <?= $page->panel_type ?>">
   <a class="Panel-link" href="<?= $page->src() ?>">
     <? if ($page->image_path): ?>
-    <figure class="Panel-image" style="background-image:url('<?= $page->image_path ?>')"></figure>
+     <!--
+     <figure class="Panel-image" style="background-image:url('<?= $page->image_path ?>')"></figure>
+     -->
+     <img class="Panel-image" src="<?= $page->image_path ?>">
     <? endif ?>
     <div class="Panel-copy">
       <h1 class="Panel-title"><?= $page->title ?></h1>

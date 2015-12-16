@@ -1,5 +1,5 @@
 <?php
-sleep(2);
+//sleep(2);
 
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 

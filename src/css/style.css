@@ -26,3 +26,5 @@
 @import './components/PostContainer';
 @import './components/PostLinks';
 @import './components/Post';
+
+@import './components/Content';

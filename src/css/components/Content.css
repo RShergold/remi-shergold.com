@@ -1,0 +1,42 @@
+
+.Content {
+  margin-top: 1rem;
+}
+
+.Content p {
+  margin-bottom: 1rem;
+}
+
+.Content h1,
+.Content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+.Content a {
+  display: inline-block;
+  color: var(--color-brand);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-brand);
+}
+.Content a:hover,
+.Content a:active {
+  border-style: solid;
+}
+
+.Content ul,
+.Content ol {
+  margin-bottom: 1rem;
+}
+
+.Content li { 
+  text-indent: 0.5rem;
+}
+
+.Content li:before {
+  content: "￮";
+  margin-right: 0.5rem;
+  color: var(--color-brand);
+}

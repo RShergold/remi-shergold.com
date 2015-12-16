@@ -7,13 +7,31 @@
 }
 
 @media all and (min-width: 321px) {
+  /* medium width phone */ 
   .Panel--withImage {
     flex: 1 50%;
   }  
+  .Panel--half {
+    flex: 1 50%;
+  }
+  .Panel--third {
+    flex: 1 50%;
+  }
+}
+
+@media all and (min-width: 376px) {
+  /* large width phone */ 
+  .Panel--withImage {
+    flex: 1 50%;
+  }  
+  .Panel--half {
+    flex: 1 50%;
+  }
   .Panel--third {
     flex: 1 33%;
   }
 }
+
 .Panel-link {
   display: flex;
   flex: 1 0;
@@ -23,9 +41,12 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
 }
+.Panel-link:active {
+  background-color: lightgrey;
+}
 .Panel-image {
   background-color: lightgrey;
-  min-height: 150px;
+  width: 100%;
 }
 .Panel-copy {
   padding: 1rem;
