@@ -5,6 +5,7 @@
 
 .Content p {
   margin-bottom: 1rem;
+  line-height: 1.25em;
 }
 
 .Content h1,
@@ -39,4 +40,11 @@
   content: "￮";
   margin-right: 0.5rem;
   color: var(--color-brand);
+}
+
+.Content code {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
