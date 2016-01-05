@@ -15,11 +15,11 @@ array_walk($_GET, function(&$value, $key) use ($db){
 
 // helpers
 function __autoload($class_name) {
-  include_once getcwd() . "/_php/classes/$class_name.php";
+  include_once dirname(__FILE__) . "/classes/$class_name.php";
 }
 
 function partial($name) {
-  return getcwd() . "/_php/partials/$name.phtml";
+  return dirname(__FILE__) . "/partials/$name.phtml";
 }
 
 function flash($key, $function) {

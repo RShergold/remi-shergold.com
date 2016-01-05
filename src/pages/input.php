@@ -4,15 +4,14 @@
   $post = new Post();
   $page = new Page($post);
 
-/*
-  echo '<pre>';
-  print_r($post);
-  print_r($page);
-  echo '</pre>';
-*/
+  define('NEW_POST', isset($_GET['new']));
+
+  if (NEW_POST) {
+    $page->title = "new post";
+  }
 
   include partial('head');
   include partial('sidenav');
-  include partial('post/content');
-  include partial('foot');
+  include partial('input/content');
+  include partial('input/foot');
 

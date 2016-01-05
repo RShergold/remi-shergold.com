@@ -32,22 +32,11 @@ gulp.task('css', function() {
   gulp.src('./src/css/style.css')
     .pipe(suitcss(suit_options))
     .pipe(gulp.dest('./build/_includes/'))
-/*
+
   gulp.src('./src/css/admin.css')
     .pipe(suitcss(suit_options))
     .pipe(gulp.dest('./build/_includes/'))
-*/
-});
 
-
-gulp.task('js-old', function() {
-  gulp.src(['./src/javascripts/global/vendor/**/*.js','./src/javascripts/global/**/*.js'])
-    .pipe(concat('script.js'))
-    .pipe(gulp.dest('./build/_includes/'));
-
-  gulp.src('./javascripts/admin/**/*.js')
-    .pipe(concat('admin.js'))
-    .pipe(gulp.dest('./build/_includes/'));
 });
 
 gulp.task('js', function() {
@@ -58,7 +47,16 @@ gulp.task('js', function() {
     ])
     .pipe(babel({presets: ['es2015']}))
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./build/_includes/'))
+    .pipe(gulp.dest('./build/_includes/'));
+
+  gulp.src([
+      './src/javascripts/admin/vendor/**/*.js',
+      'src/javascripts/admin/**/!(admin)*.js',
+      'src/javascripts/admin/admin.js',
+    ])
+    .pipe(babel({presets: ['es2015']}))
+    .pipe(concat('admin.js'))
+    .pipe(gulp.dest('./build/_includes/'));
 });
 
 

@@ -1,0 +1,16 @@
+<div class="Input-toolbar">
+  <span class="Input-slugSection">/<?= $_GET['section'] ?>/</span>
+  <input class="Input-slug" placeholder="edit-slug-here" name="slug" value="<?= $post->slug ?>">
+  <input class="Input-radio" type="radio" name="toolbar" id="r_markdown" checked>
+  <label for="r_markdown">
+    Markdown
+  </label>
+  <input class="Input-radio" type="radio" name="toolbar" id="r_preview">
+  <label for="r_preview" id="js-getMarkdownPreview">
+    Preview
+  </label>
+  <input class="Input-radio" type="radio" name="toolbar" id="r_description">
+  <label for="r_description" name="">
+    Description
+  </label>
+</div>

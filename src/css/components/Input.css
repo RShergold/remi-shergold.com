@@ -1,0 +1,93 @@
+
+.Input {
+  max-width: 40rem;
+  margin: 3rem auto;
+  background-color: white;
+  border: 1px solid var(--color-border); 
+}
+
+.Input.is-showing-markdown .Input-markdown { display: block }
+.Input.is-showing-preview .Input-preview { display: block }
+.Input.is-showing-description .Input-description { display: block }
+
+.Input-title {
+  width: 100%;
+  padding: 1rem 1rem 4rem 1rem;
+  font-family: var(--font-sansSerif);
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.25em;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.Input-toolbar {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.Input-slugSection {
+  font-size: 0.75rem;
+  align-self: center;
+}
+.Input-slug {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  font-family: var(--font-sansSerif);
+  font-size: 0.75rem;
+  color: var(--color-grey);
+}
+.Input-slug:focus {
+  color: var(--color-black);
+}
+
+.Input-radio {
+  display: none;
+}
+.Input-radio + label {
+  margin: 0 0.25rem;
+  cursor: pointer;
+  align-self: center;
+  opacity: 0.3;
+}
+.Input-radio + label:hover {
+  opacity: 1;
+}
+.Input-radio:checked + label {
+  opacity: 1;
+  color: var(--color-brand);
+}
+
+
+.Input-markdown {
+  display: none;
+  width: 100%;
+  min-height: 20rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-size: 1rem;
+  font-family: var(--font-sansSerif);
+}
+
+.Input-preview {
+  display: none;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  min-height: 19rem;
+}
+
+.Input-description {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-size: 1rem;
+  font-family: var(--font-sansSerif);
+}

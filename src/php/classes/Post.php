@@ -59,15 +59,18 @@ class Post {
     $auth->required();
     //TODO what happens if i post an invalid slug?
     $db->query( $this->build_save_sql_string() );
+
     if ($db->errno) {
       $_SESSION['message'] = ['redStuck',"mysql error: $db->error"];
       die("/{$_GET['section']}");
     }
     $this->id = ($db->insert_id) ? $db->insert_id : intval($_POST['id']);
-    $this->save_images();
+    //$this->save_images();
 
     $_SESSION['message'] = ['green','page saved'];
-    die("/{$_GET['section']}/{$_POST['slug']}");
+    //die("/{$_GET['section']}/{$_POST['slug']}");
+    header("Location: /{$_GET['section']}/{$_POST['slug']}");
+    die();
   }
 
   private function delete_page() {
@@ -85,7 +88,7 @@ class Post {
 
     // convert whitelist to sql values
     $sql_values = '';
-    foreach(['title','slug','content','excerpt','image','card_type'] as $key) {
+    foreach(['title','slug','content','description'] as $key) {
       $sql_values .= $key . "='" . $db->escape_string($_POST[$key]) . "',";
     }
     $sql_values = rtrim($sql_values,',');

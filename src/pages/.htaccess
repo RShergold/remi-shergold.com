@@ -2,6 +2,7 @@
 RewriteEngine On
 RewriteBase /
 
+RewriteRule ^ajax/markdown$ /_php/ajax/markdown.php [L]
 RewriteRule ^about$ /about.php [L,QSA]
 RewriteRule ^([\w-]+)$ /section.php?section=$1 [L,QSA]
 RewriteRule ^([\w-]+)/new$ /input.php?new=true&section=$1 [L]
