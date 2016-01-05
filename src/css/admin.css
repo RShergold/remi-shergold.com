@@ -1,6 +1,6 @@
 
 @import './_variables';
 
-
+@import './components/AdminButtons';
 @import './components/Input';
 @import './components/Files';

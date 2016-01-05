@@ -1,0 +1,36 @@
+/** @define AdminButtons */
+
+.AdminButtons {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.AdminButtons-edit {
+  float: right;
+  font-size: 0.75rem;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--color-grey);
+}
+.AdminButtons-edit:hover {
+  color: var(--color-black);
+}
+
+.AdminButtons-delete {
+  float: left;
+}
+
+.AdminButtons-delete-button {
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.75rem;
+  color: var(--color-grey);
+  font-family: var(--font-sansSerif);
+  background-color: transparent;
+}
+.AdminButtons-delete-button:hover {
+  color: red;
+}

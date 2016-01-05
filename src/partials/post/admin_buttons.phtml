@@ -1,0 +1,9 @@
+<? if($auth->is_admin()): ?>
+  <div class="AdminButtons">
+    <a class="AdminButtons-edit" href="<?= $post->src() ?>/edit">Edit</a>
+    <form class="AdminButtons-delete" method="post" action="<?= $post->src() ?>" >
+      <input type="hidden" name="action" value="delete" >
+      <input class="AdminButtons-delete-button" type="submit" value="Delete" >
+    </form>
+  </div>
+<? endif; ?>

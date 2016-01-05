@@ -1,6 +1,9 @@
 <section class="IndexPage" data-path="/<?= $section->slug ?>" data-title="<?= $section->title ?>">
   <h1 class="IndexPage-title">
     <?= $section->title ?>
+    <? if($auth->is_admin()): ?>
+      <a class="IndexPage-new Link" href="/<?= $section->slug ?>/new">New</a>
+    <? endif; ?>
   </h1>
   <p class="IndexPage-discription">
     <?= $section->description ?>

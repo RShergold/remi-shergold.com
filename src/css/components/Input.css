@@ -30,6 +30,7 @@
 
 .Input-slugSection {
   font-size: 0.75rem;
+  color: var(--color-grey);
   align-self: center;
 }
 .Input-slug {
@@ -48,7 +49,8 @@
   display: none;
 }
 .Input-radio + label {
-  margin: 0 0.25rem;
+  padding: 0 0.25rem;
+  font-size: 0.75rem;
   cursor: pointer;
   align-self: center;
   opacity: 0.3;

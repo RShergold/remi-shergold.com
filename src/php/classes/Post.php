@@ -68,7 +68,6 @@ class Post {
     //$this->save_images();
 
     $_SESSION['message'] = ['green','page saved'];
-    //die("/{$_GET['section']}/{$_POST['slug']}");
     header("Location: /{$_GET['section']}/{$_POST['slug']}");
     die();
   }

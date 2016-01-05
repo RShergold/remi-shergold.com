@@ -41,9 +41,17 @@
   font-size: 23px;
   font-weight: bold;
 }
+
+.IndexPage-new {
+  font-size: 0.75rem;
+  font-weight: normal;
+  margin: 0 0.5rem;
+}
+
 .IndexPage-discription {
   padding: 1rem 0.5rem;
 }
+
 .IndexPage-panelContainer {
   display: flex;
   flex-wrap: wrap;

@@ -13,5 +13,5 @@
   include partial('head');
   include partial('sidenav');
   include partial('input/content');
-  include partial('input/foot');
+  include partial('foot');
 

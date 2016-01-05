@@ -2,5 +2,9 @@
   </div><? //PageContainer ?>
   
   <script src="/_includes/app.js"></script>
+  <? if($auth->is_admin()): ?>
+    <script src="/_includes/admin.js"></script>
+    <link rel="stylesheet" href="/_includes/admin.css">
+  <? endif; ?>
 </body>
 </html>
