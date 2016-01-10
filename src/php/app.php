@@ -1,10 +1,9 @@
 <?php
-//sleep(2);
 
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 
-$db = new mysqli('localhost', 'root', 'root', 'remi-shergold.com'); //gitignore
-$auth = new Auth('$1$NosrB39G$w3NClFveyrSSqqMKrLFOm1');             //gitignore
+$db = new mysqli('localhost', 'root', 'root', 'remi-shergold.com');
+$auth = new Auth('$1$NosrB39G$w3NClFveyrSSqqMKrLFOm1');
 
 Nav::init();
 

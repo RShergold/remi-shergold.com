@@ -47,4 +47,17 @@
   margin-right: -1rem;
   margin-bottom: 1rem;
   padding: 1rem;
+  font-family: monospace;
+}
+
+.Content strong {
+  font-weight: bold;
+}
+
+.Content em {
+  font-style: italic;
+}
+
+.Content img {
+  max-width: 100%;
 }

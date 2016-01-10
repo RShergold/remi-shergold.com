@@ -7,8 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #8571F3;
-  background-image: url(https://tutsplus.github.io/casablanca-tutsplus/Part%203%20-%20Javascript/images/portfolio/work_1.svg);
+  background-image: url(/_includes/hero.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

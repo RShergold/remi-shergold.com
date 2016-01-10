@@ -3,7 +3,6 @@
 .PageContainer {
   min-height: 100%;
   display: flex;
-  background-color: var(--color-background);
 }
 .PageContainer-sideBar {
   flex-grow: 0;
