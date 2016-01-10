@@ -3,12 +3,14 @@
   --font-sansSerif: "proxima nova";
   --font-serif: "serif";
 
-  --color-brand: #f14e32;
-  --color-blue: #298EEA;
   --color-white: #FFF;
   --color-black: #000;
+
+  --color-brand: #f14e32;
+  --color-blue: #298EEA;
   --color-background: #f0efe7;
   --color-border: #EAEAEA;
+  --color-codeBackground: #f7f7f7;
   --color-grey: #CCC;
 
 /*
