@@ -6,8 +6,8 @@
   padding: 0.5rem;
 }
 
-@media all and (min-width: 321px) {
-  /* medium width phone */ 
+@media all and (min-width: 375px) {
+  /* restricted width (iphone 6 and above) */ 
   .Panel--withImage {
     flex: 1 50%;
   }  
@@ -19,8 +19,8 @@
   }
 }
 
-@media all and (min-width: 376px) {
-  /* large width phone */ 
+@media all and (min-width: 630px) {
+  /* full width */ 
   .Panel--withImage {
     flex: 1 50%;
   }  
@@ -56,11 +56,13 @@
 }
 .Panel-copy {
   padding: 1rem;
+  line-height: 1.25rem;
 }
 .Panel-title {
   margin: 0;
   font-size: 1rem;
   text-transform: capitalize;
+  margin-bottom: 0.25rem;
   color: var(--color-brand);
 }
 .Panel-title:after {

@@ -35,6 +35,13 @@
   border: 1px solid var(--color-border);
 }
 
+@media all and (max-width: 500px) {
+  .About-frame {
+    margin: 0;
+  }
+}
+
+
 .About-image {
   width: 100%;
 }

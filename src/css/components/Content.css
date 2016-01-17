@@ -34,6 +34,7 @@
 
 .Content li { 
   text-indent: 0.5rem;
+  line-height: 1.25em;
 }
 
 .Content li:before {

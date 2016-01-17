@@ -19,6 +19,7 @@
 .HomeCard-masthead {
   opacity: 0;
   animation: show 1s ease-out 3.2s forwards;
+  line-height: 1.25rem;
 }
 @keyframes show {
   to {

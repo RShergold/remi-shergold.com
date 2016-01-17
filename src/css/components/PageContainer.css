@@ -3,6 +3,7 @@
 .PageContainer {
   min-height: 100%;
   display: flex;
+  margin-bottom: 5rem;
 }
 .PageContainer-sideBar {
   flex-grow: 0;
@@ -24,7 +25,11 @@
     margin-left: 1rem;
   }
 }
+/* TODO is this logic the wrong way around. Should it be mobile first? */
 @media all and (max-width: 500px) {
+  .PageContainer {
+    margin-bottom: 0;
+  }
   .PageContainer-content {
     margin-right: 0;
     margin-left: 0;
