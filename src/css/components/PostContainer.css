@@ -19,12 +19,11 @@
 
 .PostContainer-rightCol {
   display: none;
-  flex: 0 8.75rem;
+
+  @media (--lg-viewport) {
+    display: block;
+    flex: 0 10rem;
+    margin-left: 1rem;
+  }
 }
 
-@media all and (min-width: 1000px) {
-  /* desktop */
-  .PostContainer-rightCol {
-    display: block;
-  }
-} 

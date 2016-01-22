@@ -9,7 +9,7 @@
 }
 
 
-@media (--md-viewport), (--lg-viewport) {
+@media (--md-viewport) {
   .MobileHeader { display: none }
 }
 

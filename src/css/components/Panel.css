@@ -6,31 +6,22 @@
   padding: 0.5rem;
 }
 
-@media all and (min-width: 375px) {
-  /* restricted width (iphone 6 and above) */ 
-  .Panel--withImage {
-    flex: 1 50%;
-  }  
-  .Panel--half {
-    flex: 1 50%;
-  }
-  .Panel--third {
+
+.Panel--half {
+  @media (--sm-viewport) {
     flex: 1 50%;
   }
 }
 
-@media all and (min-width: 630px) {
-  /* full width */ 
-  .Panel--withImage {
-    flex: 1 50%;
-  }  
-  .Panel--half {
+.Panel--third {
+  @media (--sm-viewport) {
     flex: 1 50%;
   }
-  .Panel--third {
+  @media (--lg-viewport) {
     flex: 1 33%;
   }
 }
+
 
 .Panel-link {
   display: flex;

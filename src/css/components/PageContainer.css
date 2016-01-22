@@ -3,35 +3,36 @@
 .PageContainer {
   min-height: 100%;
   display: flex;
-  margin-bottom: 5rem;
 }
+
 .PageContainer-sideBar {
+  display: none;
+
+  @media (--md-viewport) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 10rem;
+  }
+}
+
+.PageContainer-content {
+  flex-grow: 1;
+  
+  @media (--md-viewport) {
+    padding-right: 1rem;
+  }
+}
+
+z{
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 10rem;
 }
-.PageContainer-content {
+z.PageContainer-content {
+
   flex-grow: 1;
   margin-right: 2rem;
 }
 
 
-@media all and (max-width: 700px) {
-  .PageContainer-sideBar {
-    display: none;
-  }
-  .PageContainer-content {
-    margin-right: 1rem;
-    margin-left: 1rem;
-  }
-}
-/* TODO is this logic the wrong way around. Should it be mobile first? */
-@media all and (max-width: 500px) {
-  .PageContainer {
-    margin-bottom: 0;
-  }
-  .PageContainer-content {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
