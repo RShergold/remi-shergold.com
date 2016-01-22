@@ -3,7 +3,7 @@
 class Page {
 
   public $title = 'Remi Shergold';
-  public $description = 'I work for Hatch making web and mobile apps';
+  public $description = 'I\'m a web and mobile developer working in Brighton UK.';
   public $isHomePage = false;
 
   function __construct($root_object = null) {
