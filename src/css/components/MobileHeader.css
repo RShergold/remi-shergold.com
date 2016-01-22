@@ -1,0 +1,49 @@
+
+.MobileHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--color-background);
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+}
+
+
+@media (--md-viewport), (--lg-viewport) {
+  .MobileHeader { display: none }
+}
+
+.MobileHeader-homeLink {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-brand);
+
+  /* change when replaced by image */
+  color: black;
+  text-decoration: none;
+}
+
+.MobileHeader-image {
+  max-width: 100%;
+  max-height: 3rem;
+}
+
+.MobileHeader-tabs {
+  display: flex;
+}
+
+.MobileHeader-link {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.5rem 0;
+  margin-top: 4px;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 0.75rem;
+}
+
+.MobileHeader-link.is-current {
+  border-color: var(--color-brand);
+}

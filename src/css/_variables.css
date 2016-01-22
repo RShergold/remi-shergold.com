@@ -1,6 +1,6 @@
 
 :root {
-  --font-sansSerif: "proxima nova";
+  --font-sansSerif: "proxima nova", sans-serif;
   --font-serif: "serif";
 
   --color-white: #FFF;
@@ -8,19 +8,13 @@
 
   --color-brand: #f14e32;
   --color-blue: #298EEA;
-  --color-background: #f0efe7;
+  --color-background: #E9E5DE;
   --color-border: #EAEAEA;
   --color-codeBackground: #f7f7f7;
   --color-grey: #CCC;
-
-/*
-  --color-dark: #424242;
-  --color-light: #FFFFEE; /* #F6F6EF; #EEE6CB; #F3F0E2; #EFEFE7;*
-  --color-grey: #999999;
-  --color-red: red;
-
-  --color-card-border: #EAEAEA;
-
-  --nav-width: 12rem;
-*/
 }
+
+
+  @custom-media --sm-viewport (min-width:320px) and (max-width:640px);
+  @custom-media --md-viewport (min-width:640px) and (max-width:960px);
+  @custom-media --lg-viewport (min-width:960px);

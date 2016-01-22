@@ -1,0 +1,13 @@
+<div class="MobileHeader">
+  <a class="MobileHeader-homeLink" href="/">
+    Remi shergold
+  </a>
+  <div class="MobileHeader-tabs">
+    <? foreach (Nav::$sections as $nav_section): ?>
+      <a class="MobileHeader-link <? if ($nav_section->is_current()) echo 'is-current' ?>" href="/<?= $nav_section->slug ?>">
+        <?= $nav_section->title ?>
+      </a>
+    <? endforeach; ?>
+    <a class="MobileHeader-link <?= ($_SERVER['REQUEST_URI'] == '/about') ? 'is-current' : '' ?>" href="/about">About Me</a>
+  </div>
+</div>
