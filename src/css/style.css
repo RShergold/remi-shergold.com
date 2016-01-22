@@ -1,32 +1,34 @@
 
-@import './vendor/github-gist';
+@import './vendor/github-gist.css';
 
-@import './_variables';
-@import './base/animations';
+@import './_variables.css';
+@import './base/animations.css';
 
-@import './base/reset';
+@import './base/reset.css';
 
-@import './base/layout';
+@import './base/layout.css';
 
 
-@import './components/Link';
-@import './components/Header';
-@import './components/PageContainer';
-@import './components/SideNav';
+@import './components/Link.css';
 
-@import './components/SignIn';
-@import './components/Message';
-@import './components/Status';
+@import './components/Header.css';
+@import './components/MobileHeader.css';
+@import './components/PageContainer.css';
+@import './components/SideNav.css';
 
-@import './components/IndexPage';
+@import './components/SignIn.css';
+@import './components/Message.css';
+@import './components/Status.css';
 
-@import './components/Panel';
-@import './components/HomeCard';
+@import './components/IndexPage.css';
 
-@import './components/About';
+@import './components/Panel.css';
+@import './components/HomeCard.css';
 
-@import './components/PostContainer';
-@import './components/PostLinks';
-@import './components/Post';
+@import './components/About.css';
 
-@import './components/Content';
+@import './components/PostContainer.css';
+@import './components/PostLinks.css';
+@import './components/Post.css';
+
+@import './components/Content.css';

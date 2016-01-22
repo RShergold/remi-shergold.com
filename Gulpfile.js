@@ -1,5 +1,10 @@
 var gulp = require('gulp')
-  ,suitcss = require('gulp-suitcss')
+  //post css stuff
+  ,postcss = require('gulp-postcss')
+  ,cssnext = require('postcss-cssnext')
+  ,autoprefixer = require('autoprefixer')
+  ,cssimport = require("gulp-cssimport")
+
   ,concat = require('gulp-concat')
   ,babel = require('gulp-babel')
   ,watch = require('gulp-watch');
@@ -24,17 +29,18 @@ gulp.task('move_files', function() {
 });
 
 gulp.task('css', function() {
-  var suit_options = {
-     compress: true
-    ,dir: 'src/css'
-  };
+  var processors = [
+      autoprefixer({browsers: ['last 1 version']}),
+      cssnext
+  ];
 
   gulp.src('./src/css/style.css')
-    .pipe(suitcss(suit_options))
-    .pipe(gulp.dest('./build/_includes/'))
+    .pipe(cssimport())
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./build/_includes/style.css'))
 
   gulp.src('./src/css/admin.css')
-    .pipe(suitcss(suit_options))
+    .pipe(postcss(processors))
     .pipe(gulp.dest('./build/_includes/'))
 
 });

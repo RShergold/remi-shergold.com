@@ -1,7 +1,7 @@
 
-@import './_variables';
+@import './_variables.css';
 
-@import './components/AdminButtons';
-@import './components/Input';
-@import './components/Files';
-@import './components/SaveButton';
+@import './components/AdminButtons.css';
+@import './components/Input.css';
+@import './components/Files.css';
+@import './components/SaveButton.css';
