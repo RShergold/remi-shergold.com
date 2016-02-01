@@ -40,8 +40,9 @@ gulp.task('css', function() {
     .pipe(gulp.dest('./build/_includes/style.css'))
 
   gulp.src('./src/css/admin.css')
+    .pipe(cssimport())
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./build/_includes/'))
+    .pipe(gulp.dest('./build/_includes/admin.css'))
 
 });
 

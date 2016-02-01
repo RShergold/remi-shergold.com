@@ -24,9 +24,7 @@
 
 
 .Panel-link {
-  display: flex;
   flex: 1 0;
-  flex-direction: column;
   text-decoration: none;
   color: black;
   background-color: var(--color-white);
@@ -39,28 +37,36 @@
 .Panel-link:active .Panel-image {
   -webkit-filter: brightness(75%);
 }
+
 .Panel-image {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   background-color: lightgrey;
   width: 100%;
 }
+
 .Panel-copy {
   padding: 1rem;
   line-height: 1.25rem;
 }
+
 .Panel-title {
+  display: inline;
   margin: 0;
   font-size: 1rem;
   text-transform: capitalize;
   margin-bottom: 0.25rem;
   color: var(--color-brand);
+
+  &:after {
+    content: ' /';
+    font-weight: 100;
+    color: grey;
+  }
+
+  @media (--md-viewport) {
+    display: block;
+  }
+
 }
-.Panel-title:after {
-  content: ' /';
-  font-weight: 100;
-  color: grey;
-}
-.Panel--withImage .Panel-title {
-  display: inline;
-}
+
