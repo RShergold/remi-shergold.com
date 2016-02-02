@@ -1,12 +1,20 @@
 var gulp = require('gulp')
-  //post css stuff
+
+  //CSS stuff
   ,postcss = require('gulp-postcss')
   ,cssnext = require('postcss-cssnext')
   ,autoprefixer = require('autoprefixer')
   ,cssimport = require("gulp-cssimport")
 
-  ,concat = require('gulp-concat')
-  ,babel = require('gulp-babel')
+  //javaScript stuff
+  ,browserify = require('browserify')
+  ,babelify = require('babelify')
+  ,source = require('vinyl-source-stream')
+  ,buffer = require('vinyl-buffer')
+  ,sourcemaps = require('gulp-sourcemaps')
+
+
+
   ,watch = require('gulp-watch');
 
 
@@ -24,8 +32,6 @@ gulp.task('move_files', function() {
 
   gulp.src('./src/assets/**/*')
     .pipe(gulp.dest('./build/_includes'));
-
-
 });
 
 gulp.task('css', function() {
@@ -47,23 +53,37 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  gulp.src([
-      './src/javascripts/global/vendor/**/*.js',
-      'src/javascripts/global/**/!(app)*.js',
-      'src/javascripts/global/app.js',
-    ])
-    .pipe(babel({presets: ['es2015']}))
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('./build/_includes/'));
 
-  gulp.src([
-      './src/javascripts/admin/vendor/**/*.js',
-      'src/javascripts/admin/**/!(admin)*.js',
-      'src/javascripts/admin/admin.js',
-    ])
-    .pipe(babel({presets: ['es2015']}))
-    .pipe(concat('admin.js'))
-    .pipe(gulp.dest('./build/_includes/'));
+  var babel = babelify.configure({presets: ['es2015']});
+  var bundler = browserify('src/javascripts/global/app.js', {debug: true}).transform(babel);
+
+  bundler.bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/_includes'));
+
+    //.pipe(gulp.dest('./build/_includes/app.js'));
+
+//  gulp.src([
+      //'./src/javascripts/global/vendor/**/*.js',
+      //'src/javascripts/global/**/!(app)*.js',
+      //'src/javascripts/global/app.js',
+//    ])
+//    .pipe(babel({presets: ['es2015']}))
+//    .pipe(concat('app.js'))
+//    .pipe(gulp.dest('./build/_includes/'));
+
+//  gulp.src([
+//      './src/javascripts/admin/vendor/**/*.js',
+//      'src/javascripts/admin/**/!(admin)*.js',
+//      'src/javascripts/admin/admin.js',
+//    ])
+//    .pipe(babel({presets: ['es2015']}))
+//    .pipe(concat('admin.js'))
+//    .pipe(gulp.dest('./build/_includes/'));
+
 });
 
 

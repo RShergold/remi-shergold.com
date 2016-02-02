@@ -50,6 +50,7 @@
   margin-bottom: 1rem;
 }
 .Content pre code {
+  display: block;
   padding: 1rem;
   font-family: monospace;
   background-color: var(--color-codeBackground);
