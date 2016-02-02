@@ -2,8 +2,8 @@
 
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 
-$db = new mysqli('localhost', 'root', 'root', 'remi-shergold.com');
-$auth = new Auth('$1$NosrB39G$w3NClFveyrSSqqMKrLFOm1');
+$db = new mysqli('localhost', '{{database.username}}', '{{database.password}}', '{{database.name}}');
+$auth = new Auth('{{password_hash}}');
 
 Nav::init();
 

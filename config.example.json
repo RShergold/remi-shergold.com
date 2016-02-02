@@ -1,0 +1,18 @@
+{
+  "development":{
+    "database": {
+      "name": "remi-shergold.com",
+      "username": "root",
+      "password": "root"
+    },
+    "password_hash": "$1$NosrB39G$w3NClFveyrSSqqMKrLFOm1"
+  },
+  "production": {
+    "database": {
+      "name": "--",
+      "username": "--",
+      "password": "--"
+    },
+    "password_hash": "--"
+  }
+}

@@ -13,7 +13,9 @@ var gulp = require('gulp')
   ,buffer = require('vinyl-buffer')
   ,sourcemaps = require('gulp-sourcemaps')
 
-
+  //setting config.json values in app.php
+  ,replace = require('gulp-token-replace')
+  ,config = require('./config.json')
 
   ,watch = require('gulp-watch');
 
@@ -24,7 +26,11 @@ gulp.task('move_files', function() {
   gulp.src('./src/pages/**/*',{dot:true})
     .pipe(gulp.dest('./build'));
 
-  gulp.src('./src/php/**/*')
+  gulp.src('./src/php/**/!(app)*')
+    .pipe(gulp.dest('./build/_php'));
+
+  gulp.src('./src/php/app.php')
+    .pipe(replace({global:config.development}))
     .pipe(gulp.dest('./build/_php'));
 
   gulp.src('./src/partials/**/*')
@@ -64,16 +70,6 @@ gulp.task('js', function() {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/_includes'));
 
-    //.pipe(gulp.dest('./build/_includes/app.js'));
-
-//  gulp.src([
-      //'./src/javascripts/global/vendor/**/*.js',
-      //'src/javascripts/global/**/!(app)*.js',
-      //'src/javascripts/global/app.js',
-//    ])
-//    .pipe(babel({presets: ['es2015']}))
-//    .pipe(concat('app.js'))
-//    .pipe(gulp.dest('./build/_includes/'));
 
 //  gulp.src([
 //      './src/javascripts/admin/vendor/**/*.js',

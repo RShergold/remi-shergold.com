@@ -11,6 +11,7 @@
     "gulp-cssimport": "^2.1.2",
     "gulp-postcss": "^6.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-token-replace": "^1.0.3",
     "gulp-watch": "^4.3.5",
     "postcss-cssnext": "^2.4.0",
     "vinyl-buffer": "^1.0.0",
