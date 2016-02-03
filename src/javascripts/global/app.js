@@ -11,15 +11,20 @@ app.scroll_manager.init();
 
 import './vendor/noframework.waypoints.js'
 
-import Location from './Location'
-import Banner from './Banner'
-import SideNav from './SideNav'
-import ScrollManager from './ScrollManager'
 
 //create central state object
+import Location from './Location'
 const app_location = new Location(location.pathname)
 
 //init components
+import Banner from './Banner'
 Banner(app_location)
+
+import SideNav from './SideNav'
 SideNav(app_location)
+
+import MobileHeader from './MobileHeader'
+MobileHeader(app_location)
+
+import ScrollManager from './ScrollManager'
 ScrollManager(app_location)
