@@ -12,6 +12,7 @@ var gulp = require('gulp')
   ,source = require('vinyl-source-stream')
   ,buffer = require('vinyl-buffer')
   ,sourcemaps = require('gulp-sourcemaps')
+  ,uglify = require('gulp-uglify')
 
   //setting config.json values in app.php
   ,replace = require('gulp-token-replace')
@@ -67,6 +68,7 @@ gulp.task('js', function() {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/_includes'));
 
