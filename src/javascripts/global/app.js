@@ -1,15 +1,10 @@
 
-/*
-//script highlighting
-hljs.initHighlightingOnLoad();
-
-app.state = new State(location.pathname);
-app.header.init();
-app.side_nav.init();
-app.scroll_manager.init();
-*/
-
+//import vendor libraries
 import './vendor/noframework.waypoints.js'
+
+//to add/remove languages see ./vendor/highlight.js/index.js
+import hljs from './vendor/highlight.js'
+hljs.initHighlightingOnLoad()
 
 
 //create central state object
@@ -28,3 +23,5 @@ MobileHeader(app_location)
 
 import ScrollManager from './ScrollManager'
 ScrollManager(app_location)
+
+
