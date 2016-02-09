@@ -1,6 +1,6 @@
-/** @define Header */
+/** @define Banner */
 
-.Header {
+.Banner {
   min-height: 100%;
   width: 100%;
   display: flex;
@@ -18,11 +18,11 @@
   transition: opacity 0.5s;
 }
 
-.Header.is-fadingOut {
-  opacity: 0;
+.Banner.is-fadingIn {
+  animation: fadeIn 1s;
 }
 
-.Header-inner {
+.Banner-inner {
   transform-style: preserve-3d;
   height: 12rem;
   margin: 1rem;

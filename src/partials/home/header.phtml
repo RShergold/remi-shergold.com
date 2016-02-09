@@ -1,10 +1,14 @@
-  <header class="Header" id="js-header" data-path="/" style="display:<?= (@$page->isHomePage) ? 'flex' : 'none'?>">
-    <div class="Header-inner" id="js-scrollRotate">
-      <div class="HomeCard">
-        <object class="HomeCard-name" type="image/svg+xml" data="/_includes/name.svg"></object>
-        <p class="HomeCard-masthead">
-          I'm a web and mobile developer working in Brighton UK.
-        </p>
-      </div>
+<?php
+    $attributes = @$page->isHomePage ? 'data-path="/"' : 'style="display:none"';
+?>
+
+<header class="Banner" id="js-banner" <?= $attributes ?> >
+  <div class="Banner-inner" id="js-scrollRotate">
+    <div class="HomeCard">
+      <object class="HomeCard-name" type="image/svg+xml" data="/_includes/name.svg"></object>
+      <p class="HomeCard-masthead">
+        I'm a web and mobile developer working in Brighton UK.
+      </p>
     </div>
-  </header>
+  </div>
+</header>

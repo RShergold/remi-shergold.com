@@ -16,7 +16,7 @@ function init(location) {
 
   location.observe((location) => {
     for (const path in path_map) {
-      path_map[path].classList.toggle('is-current', path == location.section)
+      path_map[path].classList.toggle('is-current', path == location.current.section)
     }
   })
 

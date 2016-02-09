@@ -2,6 +2,7 @@
 
 .SideNav {
   margin-left: 1rem;
+  padding-top: 4rem;
 }
 .SideNav.is-fixed {
   position: fixed;
@@ -11,7 +12,7 @@
   display: block;
   text-decoration: none;
   color: black;
-  margin: 4rem 0 2rem 0;
+  margin-bottom: 2rem;
   font-size: 25px;
   font-weight: bold;
 }

@@ -26,4 +26,3 @@
   if (RENDER_CONTENT_ONLY == false) {
     include partial('foot');
   }
-

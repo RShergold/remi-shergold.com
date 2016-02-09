@@ -1,7 +1,7 @@
 
   <div class="PageContainer">
     <div class="PageContainer-sideBar" id="js-sideNavContainer">
-      <div class="SideNav" id="js-sideNav">
+      <div class="SideNav <?= !@$page->isHomePage ? 'is-fixed' : '' ?>" id="js-sideNav">
         <a class="SideNav-title" href="/">
           Remi<br>Shergold
         </a>
