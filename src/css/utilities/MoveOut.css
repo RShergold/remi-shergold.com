@@ -1,16 +1,60 @@
 
 .u-MoveOut--left {
-
+  animation: MoveOut--left 0.5s forwards;
 }
 
 .u-MoveOut--right {
-
+  animation: MoveOut--right 0.5s forwards;
 }
 
 .u-MoveOut--up {
-
+  animation: MoveOut--up 0.5s forwards;
 }
 
 .u-MoveOut--down {
+  animation: MoveOut--down 0.5s forwards;
+}
 
+@keyframes MoveOut--left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes MoveOut--right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes MoveOut--up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes MoveOut--down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 }

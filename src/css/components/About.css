@@ -11,17 +11,6 @@
   }
 }
 
-
-.About.is-enteringFadingForward {
-  animation: fade-forward 1s;
-  animation-fill-mode: forwards;
-}
-
-.About.is-exitingFadingBack {
-  animation: fade-back 1s;
-  animation-fill-mode: forwards;
-}
-
 .About-title {
   padding: 0 0.5rem;
   margin-bottom: 1.5rem;

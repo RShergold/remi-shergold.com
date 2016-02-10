@@ -10,29 +10,6 @@
   }
 }
 
-
-/* enter stage animations */
-.IndexPage.is-enteringFadingForward {
-  animation: fade-forward 0.5s forwards;
-}
-.IndexPage.is-enteringStageLeft {
-  animation: enterLeft 0.5s forwards;
-}
-
-/* exit stage animations */
-.IndexPage.is-exitingFadingBack {
-  animation: fade-back 0.5s;
-  animation-fill-mode: forwards;
-}
-.IndexPage.is-exitingStageLeft {
-  animation: exitLeft 0.5s forwards;
-}
-.IndexPage.is-exitingStageRight {
-  animation: exitRight 0.5s forwards;
-}
-
-
-
 .IndexPage-title {
   padding: 0 0.5rem;
   font-size: 23px;
