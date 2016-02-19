@@ -13,6 +13,7 @@ function get_page_for(location) {
 
   return new Promise((resolve, reject)=>{
     if (path in cache) {
+
       //return page from cache
       resolve(cache[path]);
     } else {
@@ -21,7 +22,7 @@ function get_page_for(location) {
       var client = new XMLHttpRequest();
       client.open('GET', `http://remi-shergold.com${path}?content_only=true`);
       client.send();
-      self = this;
+
       client.onload = function(){
         if (this.status == 200) {
           cache[path] = this.response;
@@ -37,4 +38,4 @@ function get_page_for(location) {
   });
 }
 
-export {init_content, get_page_for}
+export {init_content, get_page_for, }

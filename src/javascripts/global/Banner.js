@@ -29,7 +29,6 @@ function on_scroll() {
 }
 
 function on_location_changed(location) {
-  //foo
   
   if (location.moved_away_from_homepage() ) {
     //hide banner
@@ -47,6 +46,7 @@ function on_location_changed(location) {
 
 //helpers
 function scroll_top() {
+  //TODO i'm only targeting new browsers. How much of this do i need these days?
   return (window.pageYOffset !== undefined) 
             ? window.pageYOffset 
             : (document.documentElement || document.body.parentNode || document.body).scrollTop

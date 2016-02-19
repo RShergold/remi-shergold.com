@@ -2,10 +2,19 @@
 
 .Panel {
   display: flex;
+  position: relative;
   flex: 1 100%;
   padding: 0.5rem;
-}
 
+  &:hover:after {
+    content: '⇢';
+    font-size: 1.5rem;   
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+    color: var(--color-grey);
+  }
+}
 
 .Panel--half {
   @media (--sm-viewport) {
@@ -30,18 +39,21 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 2px;
-}
-.Panel-link:active {
-  border-color: var(--color-brand);
-}
-.Panel-link:active .Panel-image {
-  -webkit-filter: brightness(75%);
+
+  &:active {
+    border-color: var(--color-brand);
+  }
+
+  &:active .Panel-image {
+    webkit-filter: brightness(75%);
+  }
 }
 
 .Panel-image {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  background-color: lightgrey;
+  background-color: var(--color-grey);
+  background: url(http://i.imgur.com/R9HLLLi.png);
   width: 100%;
 }
 
@@ -61,7 +73,7 @@
   &:after {
     content: ' /';
     font-weight: 100;
-    color: grey;
+    color: var(--color-grey);
   }
 
   @media (--md-viewport) {

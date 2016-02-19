@@ -15,6 +15,7 @@ function scroll_to(location) {
     end_time = start_time + duration;
   
   const requestAnimFrame = (function(){
+    //TODO i'm only targeting new browsers so how much of this do I need?
     return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
   })();
   

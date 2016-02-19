@@ -53,6 +53,21 @@ function transition_to(location) {
         //TODO deal with error (may be network etc)
       }
     )
+  }else if (location.current.content_is_post() && location.previous.content_is_post()) {
+    //transition between posts
+
+    //const preceding_post = content.post_on_stage_preceding(location)
+    //add_placeholder_to_stage_after(preceding_post)
+    get_page_for(location).then(
+      (page_html) => {
+        document.body.innerHTML = page_html
+        //replace_placeholder_with(page_html)
+      },
+      (error) => {
+        //TODO deal with error (may be network etc)
+      }
+    )
+
   }
 
   

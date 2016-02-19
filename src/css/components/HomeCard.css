@@ -13,7 +13,7 @@
 
 .HomeCard-name {
   width: 85%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .HomeCard-masthead {
@@ -22,11 +22,6 @@
   line-height: 1.25rem;
 }
 @keyframes show {
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes show {
   to {
     opacity: 1;
   }

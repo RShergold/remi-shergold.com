@@ -28,11 +28,12 @@
   border: 1px solid black;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
+
+  &:focus{
+    outline: 0;
+  }
 }
 
-.SignIn-password:focus{
-  outline: 0;
-}
 
 .SignIn-button {
   padding: 0 3rem;

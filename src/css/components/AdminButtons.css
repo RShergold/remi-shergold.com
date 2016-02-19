@@ -13,9 +13,10 @@
   padding: 0.75rem;
   text-decoration: none;
   color: var(--color-grey);
-}
-.AdminButtons-edit:hover {
-  color: var(--color-black);
+
+  &:hover {
+    color: var(--color-black);
+  }
 }
 
 .AdminButtons-delete {
@@ -30,7 +31,8 @@
   color: var(--color-grey);
   font-family: var(--font-sansSerif);
   background-color: transparent;
-}
-.AdminButtons-delete-button:hover {
-  color: red;
+
+  &:hover {
+    color: red;
+  }
 }

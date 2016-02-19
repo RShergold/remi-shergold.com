@@ -18,21 +18,12 @@
 
 .PageContainer-content {
   flex-grow: 1;
+  margin-bottom: 4rem;
   
   @media (--md-viewport) {
     padding-right: 1rem;
   }
 }
 
-z{
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 10rem;
-}
-z.PageContainer-content {
-
-  flex-grow: 1;
-  margin-right: 2rem;
-}
 
 

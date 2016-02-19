@@ -1,69 +1,72 @@
 
 .Content {
   margin-top: 1rem;
-}
 
-.Content p {
-  margin-bottom: 1rem;
-  line-height: 1.25em;
-}
 
-.Content h1,
-.Content h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-brand);
-}
+  & p {
+    margin-bottom: 1rem;
+    line-height: 1.25em;
+  }
 
-.Content a {
-  display: inline-block;
-  color: var(--color-brand);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--color-brand);
-}
-.Content a:hover,
-.Content a:active {
-  border-style: solid;
-}
+  & h1,
+  & h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-brand);
+  }
 
-.Content ul,
-.Content ol {
-  margin-bottom: 1rem;
-}
+  & a {
+    display: inline-block;
+    color: var(--color-brand);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--color-brand);
+  
+    &:hover,
+    &:active {
+      border-style: solid;
+    }
+  }
 
-.Content li { 
-  text-indent: 0.5rem;
-  line-height: 1.25em;
-}
+  & ul,
+  & ol {
+    margin-bottom: 1rem;
+  }
 
-.Content li:before {
-  content: "\FFEE";
-  margin-right: 0.5rem;
-  color: var(--color-brand);
-}
+  & li { 
+    text-indent: 0.5rem;
+    line-height: 1.25em;
+  
+    &:before {
+      content: "\FFEE";
+      margin-right: 0.5rem;
+      color: var(--color-brand);
+    }
+  }
 
-.Content pre {
-  max-width: 100vw;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  margin-bottom: 1rem;
-}
-.Content pre code {
-  display: block;
-  padding: 1rem;
-  font-family: monospace;
-  background-color: var(--color-codeBackground);
-}
+  & pre {
+    max-width: 100vw;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: 1rem;
+  }
+  & pre code {
+    display: block;
+    padding: 1rem;
+    font-family: monospace;
+    background-color: var(--color-codeBackground);
+  }
 
-.Content strong {
-  font-weight: bold;
-}
+  & strong {
+    font-weight: bold;
+  }
 
-.Content em {
-  font-style: italic;
-}
+  & em {
+    font-style: italic;
+  }
 
-.Content img {
-  max-width: 100%;
+  & img {
+    max-width: 100%;
+  }
+
 }
