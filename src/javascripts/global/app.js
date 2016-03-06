@@ -12,8 +12,8 @@ import Location from './LocationState'
 const app_location = new Location(location.pathname)
 
 //stateful componenets
-import {init_stage} from './Stage'
-init_stage(document.getElementById('js-stage'))
+import Stage from './Stage'
+Stage.init(document.getElementById('js-stage'))
 
 import {init_content} from './Content'
 init_content(document.getElementById('js-stage'))

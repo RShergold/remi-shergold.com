@@ -46,6 +46,13 @@ function add_to_stage(html, transition_class) {
   append_pages_when_stage_is_clear(new_pages.children);
 }
 
+function append_to_stage(html) {
+  const new_page = document.createElement('div')
+  new_page.innerHTML = html
+  stage_element.appendChild(new_page.children[0])
+  update_list_of_pages_on_stage()
+}
+
 function append_pages_when_stage_is_clear(pages) {
   pages_to_append = pages || pages_to_append
 
@@ -65,6 +72,27 @@ function append_pages_when_stage_is_clear(pages) {
   } 
 }
 
+function stage_contains(location) {
+  return !!pages[location.current.content_path]
+}
 
 
-export {init_stage, clear_stage, add_to_stage}
+export default {
+
+  init: init_stage,
+  replace_pages_with: add_to_stage,
+  append_page: append_to_stage,
+  clear: clear_stage,
+  contains: stage_contains,
+
+  loading: {
+    show: function(position) {
+
+    },
+    hide: function() {
+
+    }
+  },
+}
+
+
