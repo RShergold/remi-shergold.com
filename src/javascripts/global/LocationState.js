@@ -41,9 +41,6 @@ class LocationState {
     this.current = this.next
     this.next = null
 
-    
-    console.log('previous', this.previous)
-    console.log('current', this.current)
     if (this._has_changed()) {
       this._notify_observers()
     }

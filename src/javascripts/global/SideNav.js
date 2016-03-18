@@ -7,11 +7,6 @@ var trigger_fixed_waypoint = null
 
 function init(location) {
 
-  new Waypoint({
-    element: container_element,
-    handler: (e) => console.log(e)
-  })
-
   if (location.current.window_is_home()) {
     add_homepage_waypoint()
   }
