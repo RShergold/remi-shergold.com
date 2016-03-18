@@ -1,3 +1,6 @@
+//to add/remove languages see ./vendor/highlight.js/index.js
+import highlightJS from './vendor/highlight.js'
+
 import {create_waypoints, destroy_waypoints} from './ScrollManager'
 
 //TODO this is global state. What do?
@@ -10,14 +13,6 @@ function init_stage(element) {
   stage_element = element
   update_list_of_pages_on_stage()
 }
-
-function update_list_of_pages_on_stage() {
-  const dom_pages = stage_element.querySelectorAll('[data-path]')
-  for (let i=0; i<dom_pages.length; i++) {
-    pages[dom_pages[i].dataset.path] = dom_pages[i]
-  }
-}
-
 
 function clear_stage(transition_class) {
   destroy_waypoints()
@@ -53,6 +48,13 @@ function append_to_stage(html) {
   update_list_of_pages_on_stage()
 }
 
+
+function stage_contains(location) {
+  return !!pages[location.current.content_path]
+}
+
+
+// Private functions
 function append_pages_when_stage_is_clear(pages) {
   pages_to_append = pages || pages_to_append
 
@@ -72,8 +74,37 @@ function append_pages_when_stage_is_clear(pages) {
   } 
 }
 
-function stage_contains(location) {
-  return !!pages[location.current.content_path]
+function update_list_of_pages_on_stage() {
+  const dom_pages = stage_element.querySelectorAll('[data-path]')
+  for (let i=0; i<dom_pages.length; i++) {
+    const page_path = dom_pages[i].dataset.path
+    if (page_path in pages == false) {
+      ensure_correct_rendering_of_page(dom_pages[i])
+    }
+    pages[page_path] = dom_pages[i]
+  }
+
+}
+
+function ensure_correct_rendering_of_page(page_element) {
+  // if the page has a codeblock, run santax highlighting
+  const code_blocks = page_element.querySelectorAll('pre code')
+  let i = code_blocks.length
+  while (i--) {
+    highlightJS.highlightBlock(code_blocks[i])
+  }
+
+  //proper rendering of JS bin 
+  let jsbinScriptElement = page_element.querySelector("script[src^='http://static.jsbin.com/js/embed.min.js']")
+  if (jsbinScriptElement) {
+    //mark parent as jsbinContainer
+    jsbinScriptElement.parentElement.classList.add('is-jsbinContainer')
+    //reload script.
+    window.jsbinified = undefined
+    const newScript = document.createElement('script')
+    newScript.src = jsbinScriptElement.src
+    jsbinScriptElement.parentElement.replaceChild(newScript, jsbinScriptElement)
+  }
 }
 
 
