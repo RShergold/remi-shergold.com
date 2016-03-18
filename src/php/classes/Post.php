@@ -32,7 +32,7 @@ class Post {
   }
 
   public function is_current() {
-    return ($this->slug == @$_GET['page'] );
+    return $this->slug == @$_GET['page'];
   }
 
   public function src() {
