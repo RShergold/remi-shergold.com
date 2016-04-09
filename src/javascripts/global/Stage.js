@@ -95,7 +95,7 @@ function ensure_correct_rendering_of_page(page_element) {
   }
 
   //proper rendering of JS bin 
-  let jsbinScriptElement = page_element.querySelector("script[src^='http://static.jsbin.com/js/embed.min.js']")
+  const jsbinScriptElement = page_element.querySelector("script[src^='http://static.jsbin.com/js/embed.min.js']")
   if (jsbinScriptElement) {
     //mark parent as jsbinContainer
     jsbinScriptElement.parentElement.classList.add('is-jsbinContainer')
@@ -105,6 +105,16 @@ function ensure_correct_rendering_of_page(page_element) {
     newScript.src = jsbinScriptElement.src
     jsbinScriptElement.parentElement.replaceChild(newScript, jsbinScriptElement)
   }
+
+  //mark image containers
+  const content_image_elements = page_element.querySelectorAll('.Content p img')
+  i = content_image_elements.length
+  while (i--) {
+    const image_container = content_image_elements[i].parentElement,
+          image_count = image_container.getElementsByTagName('img').length
+    image_container.setAttribute('imagecount', image_count)
+  }
+
 }
 
 
