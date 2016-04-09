@@ -87,7 +87,12 @@ gulp.task('js', function() {
 
 
 gulp.task('watch', function() {
-  gulp.watch('./src/pages/**/*', ['move_files']);
+  gulp.watch([
+    './src/assets/**/*',
+    './src/pages/**/*',
+    './src/partials/**/*',
+    './src/php/**/*',
+  ], ['move_files']);
   gulp.watch('./src/css/**/*.css', ['css']);
   gulp.watch('./src/javascripts/**/*.js', ['js']);
 });
