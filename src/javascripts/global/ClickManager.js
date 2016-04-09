@@ -16,7 +16,8 @@ function on_click(e) {
     if (element.tagName == 'A' && element.getAttribute('href')[0] == '/') {
       
       const new_path = element.getAttribute('href')
-      _location.change_to(new_path, 'click')
+      const position = element.dataset.created || null
+      _location.change_to(new_path, 'click', position)
 
       if (_location.is_admin_area() === false) {
         e.preventDefault()

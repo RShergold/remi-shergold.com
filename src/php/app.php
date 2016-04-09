@@ -1,5 +1,5 @@
 <?php
-
+sleep(5);
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 
 $db = new mysqli('localhost', '{{database.username}}', '{{database.password}}', '{{database.name}}');

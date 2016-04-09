@@ -1,9 +1,15 @@
+<?php
+function classFor($page) {
+  return $page->is_current() ? 'PostLinks-link is-current' : 'PostLinks-link';
+}
+?>
+
 <div class="PostLinks">
   <p class="PostLinks-title">
     more posts
   </p>
   <? foreach(Nav::pages_in_current_section() as $page): ?>
-    <a class="PostLinks-link <? if ($page->is_current()) echo 'is-current' ?>" href="<?= $page->src() ?>">
+    <a class="<?= classFor($page) ?>" href="<?= $page->src() ?>" data-created="<?= strtotime($page->created) ?>">
       <?= $page->title ?>
     </a>   
   <? endforeach; ?>

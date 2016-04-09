@@ -30,10 +30,11 @@ class LocationState {
   }
   
 
-  change_to(path, caller = null) {
+  change_to(path, caller = null, position) {
 
     this.next = new Location(path)
     this.next.created_by = caller
+    this.next.position = position
     this.next.window_path = this._should_update_window_path() ? path : this.current.window_path
 
     //shift them all along

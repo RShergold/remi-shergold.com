@@ -1,0 +1,37 @@
+
+.Loading {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-grey);
+
+  &:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: url("/_includes/loading.svg");
+    background-size: cover;
+    margin-bottom: 1rem;
+  }
+  &:after {
+    content: 'Loading...';
+  }
+}
+
+.Loading--inline {
+  height: 200px;
+
+  @media (--lg-viewport) {
+    padding-right: 11rem;
+  }
+}
+
+.Loading--fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

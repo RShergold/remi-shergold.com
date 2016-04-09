@@ -1,0 +1,15 @@
+<svg width="100px" height="100px" viewBox="-50 -50 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      g {animation: rotate 2s ease infinite;}
+      @keyframes rotate {
+        from {transform: rotate(180deg);}
+        to {transform: rotate(540deg);}
+      }
+    </style>
+  </defs>
+  <g>
+    <rect height="50"></rect>
+    <circle fill="#CCC" cy="45" r="5"></circle>
+  </g>
+</svg>

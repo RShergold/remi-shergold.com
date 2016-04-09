@@ -1,11 +1,19 @@
 
 function scroll_to(location) {
 
-  try {
-    var element = document.querySelectorAll(`[data-path='${location.current.content_path}']`)[0]
-  } catch (err) {
-    throw `failed to find content path ${location.current.content_path}`
+  var element;
+
+  //location can be an element or a location object
+  if (location.hasOwnProperty("current")) {
+    try {
+      element = document.querySelectorAll(`[data-path='${location.current.content_path}']`)[0]
+    } catch (err) {
+      throw `failed to find content path ${location.current.content_path}`
+    }
+  } else {
+    element = location
   }
+
 
   const duration = 500, 
     start_pos = window.scrollY,

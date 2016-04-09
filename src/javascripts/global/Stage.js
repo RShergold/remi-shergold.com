@@ -2,6 +2,7 @@
 import highlightJS from './vendor/highlight.js'
 
 import {create_waypoints, destroy_waypoints} from './ScrollManager'
+import scroll_to from './ScrollTo'
 
 //TODO this is global state. What do?
 var stage_element = null
@@ -41,10 +42,11 @@ function add_to_stage(html, transition_class) {
   append_pages_when_stage_is_clear(new_pages.children);
 }
 
-function append_to_stage(html) {
+function append_to_stage(html, position) {
   const new_page = document.createElement('div')
   new_page.innerHTML = html
-  stage_element.appendChild(new_page.children[0])
+  const page_below = find_page_below(position)
+  stage_element.insertBefore(new_page.children[0], page_below)
   update_list_of_pages_on_stage()
 }
 
@@ -117,6 +119,30 @@ function ensure_correct_rendering_of_page(page_element) {
 
 }
 
+function find_page_below(position) {
+  position = Number(position)
+  let page_below = null
+
+  for (let path in pages) {
+    const page_position = Number(pages[path].dataset.created)
+    if (page_position < position) {
+      //this page is below 'position'
+      if (page_below) {
+        if (page_position > Number(page_below.dataset.created)) {
+          //this page is above the current 'page_below' page
+          page_below = pages[path]
+        }
+      } else {
+        page_below = pages[path]
+      }
+    }
+  }
+  return page_below
+}
+
+
+var loading_element = document.createElement('div');
+loading_element.className = 'Loading'; 
 
 export default {
 
@@ -127,11 +153,19 @@ export default {
   contains: stage_contains,
 
   loading: {
-    show: function(position) {
-
+    attach: function() {
+      stage_element.appendChild(loading_element)
+      loading_element.classList.add('Loading--fixed')
     },
-    hide: function() {
-
+    attachAt: function(position) {
+      const page_below = find_page_below(position)
+      loading_element.classList.add('Loading--inline')
+      stage_element.insertBefore(loading_element, page_below)
+      scroll_to(loading_element)
+    },
+    remove: function() {
+      stage_element.removeChild(loading_element)
+      loading_element.className = 'Loading'
     }
   },
 }
