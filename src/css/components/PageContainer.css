@@ -19,8 +19,10 @@
 .PageContainer-content {
   flex-grow: 1;
   margin-bottom: 4rem;
+  padding-top: 3rem;
   
   @media (--md-viewport) {
+    padding-top: 0;
     padding-right: 1rem;
   }
 }

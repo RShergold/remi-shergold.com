@@ -16,6 +16,15 @@
   perspective: 1000px;
 
   transition: opacity 0.5s;
+
+  /* 
+    this removes the extra padding given to page 
+    container to make room for the mobile header
+  */
+  margin-bottom: -3rem;
+  @media (--md-viewport) {
+    margin-bottom: 0;
+  }
 }
 
 .Banner.is-fadingIn {
