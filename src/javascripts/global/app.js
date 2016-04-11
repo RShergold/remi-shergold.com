@@ -31,6 +31,3 @@ SideNav(app_location)
 
 import MobileHeader from './MobileHeader'
 MobileHeader(app_location)
-
-
-

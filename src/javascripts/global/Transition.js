@@ -82,12 +82,7 @@ function transition_to(location) {
 
   }
 
-  
-
 }
-
-
-
 
 
 export default transition_to

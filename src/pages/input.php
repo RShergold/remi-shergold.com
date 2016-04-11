@@ -14,4 +14,3 @@
   include partial('sidenav');
   include partial('input/content');
   include partial('foot');
-
