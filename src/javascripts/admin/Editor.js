@@ -23,4 +23,17 @@ function init_growing_text_areas() {
 
 }
 
-export {init_growing_text_areas}
+function init_auto_slug() {
+
+  const slug_input = document.getElementById('js-slug');
+  const title_input = document.getElementById('js-title');
+
+  if (!slug_input || slug_input.value.length) return // only auto slug if there is no slug already
+
+  title_input.oninput = () => {
+    slug_input.value = title_input.value.replace(/[^a-z0-9]+/g, '-');
+  }
+
+}
+
+export {init_growing_text_areas, init_auto_slug}

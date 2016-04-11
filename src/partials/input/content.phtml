@@ -7,7 +7,7 @@
   <div class="PostContainer-leftCol">
     <article class="Input is-showing-markdown" id="js-inputFrame">
     <? include partial('input/toolbar') ?>
-      <textarea class="Input-title" placeholder="Title" name="title"><?= $post->title ?></textarea>
+      <textarea id="js-title" class="Input-title" placeholder="Title" name="title"><?= $post->title ?></textarea>
       <textarea id="js-markdown" class="Input-markdown" name="content" data-min-height="320"><?= $post->content ?></textarea>
       <div id="js-preview" class="Input-preview Content"><?= $post->html_content() ?></div>
       <textarea class="Input-description" name="description" data-min-height="96"><?= $post->description ?></textarea>
