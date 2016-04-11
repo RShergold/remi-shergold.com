@@ -73,14 +73,15 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./build/_includes'));
 
 
-//  gulp.src([
-//      './src/javascripts/admin/vendor/**/*.js',
-//      'src/javascripts/admin/**/!(admin)*.js',
-//      'src/javascripts/admin/admin.js',
-//    ])
-//    .pipe(babel({presets: ['es2015']}))
-//    .pipe(concat('admin.js'))
-//    .pipe(gulp.dest('./build/_includes/'));
+  browserify('src/javascripts/admin/admin.js', {debug: true})
+    .transform(babel)
+    .bundle()
+    .pipe(source('admin.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    //.pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/_includes'));
 
 });
 
