@@ -1,0 +1,27 @@
+/** @define SingleFile */
+
+.SingleFile {
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.SingleFile-title {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+
+.SingleFile-image {
+  display: block;
+  width: 100%;
+}
+
+.SingleFile-delete {
+  position: absolute;
+  right: 0;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(1,1,1,0.1);
+  cursor: pointer;
+}
