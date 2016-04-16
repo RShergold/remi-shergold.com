@@ -1,0 +1,110 @@
+/** @define Status */
+
+
+.Status {
+  overflow: hidden;
+  opacity: 0;
+  animation: status-show 0.2s linear 0.5s forwards;
+}
+
+@keyframes status-show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.Status--fullScreen {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  width: 100px;
+  height: 32px;
+  margin-top: -15px;
+  margin-left: -50px;
+}
+
+
+/* .is-downloading */
+.Status.is-downloading .Status-icon:before,
+.Status.is-downloading .Status-icon:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  display: inline-block;
+  border-radius: 100%;
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--color-grey);
+  border-right-color: transparent;
+  z-index: 1;
+}
+
+.Status.is-downloading .Status-icon:before {
+  animation: status-pacman-top linear 0.5s infinite;
+}
+
+.Status.is-downloading .Status-icon:after {
+  animation: status-pacman-bottom linear 0.5s infinite;
+}
+
+@keyframes status-pacman-top {
+  0% {transform: rotate(0);}
+  50% {transform: rotate(45deg);}
+}
+
+@keyframes status-pacman-bottom {
+  0% {transform: rotate(0);}
+  50% {transform: rotate(-45deg);}
+}
+
+
+.Status.is-downloading .Status-message {
+  display: inline-block;
+  margin-top: 7px;
+  color: var(--color-grey);
+  animation: status-marquee linear 3s infinite;
+}
+
+@keyframes status-marquee {
+  from { transform:translateX(100%); }
+  to { transform:translateX(-150%); }
+}
+
+/*
+.Status {
+  text-align: center;
+}
+
+.Status--fullScreen {
+  position: fixed;
+  top: 50vh;
+  right: 50vw;
+  background-color: grey;
+  width: 300px;
+  height: 50px;
+  margin-right: -150px;
+}
+
+.Status--bottom {
+  display: block;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-bottom: 1rem;
+}
+
+.Status.is-downloading:before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: blue;
+}
+
+.Status.is-error {
+  background-color: lightcoral;
+}
+*/

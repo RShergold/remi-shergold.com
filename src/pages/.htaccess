@@ -2,6 +2,13 @@
 RewriteEngine On
 RewriteBase /
 
+
+#RewriteCond %{THE_REQUEST} POST
+RewriteRule ^uploads\/([\w]+)\/(.+)$ /_php/ajax/uploads.php&post_id=$1&filename=$2 [L,QSA]
+
+#GET & POST upload index
+RewriteRule ^uploads\/(\w+)\/?$ /_php/ajax/uploads.php?post_id=$1 [QSA]
+
 RewriteRule ^ajax/markdown$ /_php/ajax/markdown.php [L]
 RewriteRule ^about$ /about.php [L,QSA]
 RewriteRule ^([\w-]+)$ /section.php?section=$1 [L,QSA]

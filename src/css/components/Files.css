@@ -19,8 +19,9 @@
   font-size: 1rem;
   opacity: 0.3;
   outline: none;
+  cursor: pointer;
 
   &:focus {
-    border-style: solid;
+    opacity: 1;
   }
 }

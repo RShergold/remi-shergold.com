@@ -49,7 +49,9 @@
   display: none;
 }
 .Input-radio + label {
-  padding: 0 0.25rem;
+  margin: 0 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid transparent;
   font-size: 0.75rem;
   cursor: pointer;
   align-self: center;
@@ -60,7 +62,8 @@
 }
 .Input-radio:checked + label {
   opacity: 1;
-  color: var(--color-brand);
+  color: var(--color-black);
+  border-bottom: 1px solid;
 }
 
 

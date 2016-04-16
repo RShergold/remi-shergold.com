@@ -58,6 +58,7 @@ class Post {
     
     $auth->required();
     //TODO what happens if i post an invalid slug?
+    if ( empty($_POST['slug']) ) die('slug invalid');
     $db->query( $this->build_save_sql_string() );
 
     if ($db->errno) {
