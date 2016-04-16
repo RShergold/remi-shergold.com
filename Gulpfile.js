@@ -3,7 +3,6 @@ var gulp = require('gulp')
   //CSS stuff
   ,postcss = require('gulp-postcss')
   ,cssnext = require('postcss-cssnext')
-  ,autoprefixer = require('autoprefixer')
   ,cssimport = require("gulp-cssimport")
 
   //javaScript stuff
@@ -42,19 +41,15 @@ gulp.task('move_files', function() {
 });
 
 gulp.task('css', function() {
-  var processors = [
-      autoprefixer({browsers: ['last 1 version']}),
-      cssnext
-  ];
 
   gulp.src('./src/css/style.css')
     .pipe(cssimport())
-    .pipe(postcss(processors))
+    .pipe(postcss([cssnext]))
     .pipe(gulp.dest('./build/_includes/style.css'))
 
   gulp.src('./src/css/admin.css')
     .pipe(cssimport())
-    .pipe(postcss(processors))
+    .pipe(postcss([cssnext]))
     .pipe(gulp.dest('./build/_includes/admin.css'))
 
 });
