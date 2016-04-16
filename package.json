@@ -2,6 +2,10 @@
   "name": "remi-shergold.com",
   "version": "1.0.0",
   "author": "Remi Shergold",
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/RShergold/remi-shergold.com.git"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel-preset-es2015": "^6.1.2",
