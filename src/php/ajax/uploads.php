@@ -7,6 +7,6 @@
   $action = isset($_GET['action']) ? $_GET['action'] : 'index';
   $filename = @$_GET['filename'];
 
-  if (method_exists($files, $action)) {
-    echo $files->$action($filename);
+  if (in_array($action, ['index', 'create', 'destroy'])) {
+    echo json_encode($files->$action($filename), JSON_PRETTY_PRINT);
   }

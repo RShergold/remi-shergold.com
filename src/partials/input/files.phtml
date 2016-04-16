@@ -2,8 +2,9 @@
   <p class="Files-title">
     Files
   </p>
-  <ul class="Files-list">
+  <ul class="Files-list" id="js-fileList">
     <? include partial('input/single_file') ?>
   </ul>
-  <button class="Files-addButton" type="button">+ File</button>
+  <input type="file" id="js-fileInput" style="display:none" multiple>
+  <label for="js-fileInput" class="Files-addButton">+ File</label>
 </div>
