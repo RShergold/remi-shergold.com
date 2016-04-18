@@ -85,7 +85,6 @@
 
   & img {
     max-width: 100%;
-    padding: 1rem;
   }
 
   /* jsBin container */
@@ -105,8 +104,6 @@
     overflow: hidden;
     margin-left: -1rem;
     margin-right: -1rem;
-    background-color: #CCC;
-    background: url(http://i.imgur.com/R9HLLLi.png);
 
     & img {
       width: 100%;
