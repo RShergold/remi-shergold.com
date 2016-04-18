@@ -123,7 +123,6 @@ class ServerFiles {
     return this._xhr_promise({
       url: this.resource_uri,
       method: 'POST',
-      action: 'create',
       formData
     })
   }
@@ -131,8 +130,7 @@ class ServerFiles {
   destroy(file_name) {
     return this._xhr_promise({
       url: this.resource_uri + file_name,
-      method: 'POST',
-      action: 'destroy'
+      method: 'DELETE',
     })
   }
 
@@ -150,10 +148,11 @@ class ServerFiles {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest()
       const error_handler = this._error
-      if (options.action) options.url += '?action='+options.action
 
       xhr.open(options.method, options.url)
       xhr.onload = function () {
+        console.log(xhr.response)
+
         if (this.status >= 200 && this.status < 300) {
           resolve(JSON.parse(xhr.response));
         } else {

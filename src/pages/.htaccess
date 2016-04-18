@@ -3,11 +3,11 @@ RewriteEngine On
 RewriteBase /
 
 
-RewriteCond %{THE_REQUEST} POST
-RewriteRule ^uploads/(_temp|\d+)/(.+)$ /_php/ajax/uploads.php?post_id=$1&filename=$2 [L,QSA]
+RewriteCond %{THE_REQUEST} DELETE
+RewriteRule ^uploads/(_temp|\d+)/(.+)$ /_php/ajax/uploads.php?post_id=$1&filename=$2 [L]
 
 #GET & POST upload index
-RewriteRule ^uploads/(_temp|\d+)/?$ /_php/ajax/uploads.php?post_id=$1 [QSA]
+RewriteRule ^uploads/(_temp|\d+)/?$ /_php/ajax/uploads.php?post_id=$1 [L]
 
 RewriteRule ^ajax/markdown$ /_php/ajax/markdown.php [L]
 RewriteRule ^about$ /about.php [L,QSA]
