@@ -13,13 +13,3 @@
   ];
 
   echo json_encode( $files->{$actions[$method]}($filename) );
-/*
-  if ($action == 'destroy'){
-    print_r($_SERVER['REQUEST_METHOD']);
-    die();
-  }
-
-  if (in_array($action, ['index', 'create', 'destroy'])) {
-    echo json_encode($files->$action($filename), JSON_PRETTY_PRINT);
-  }
-*/

@@ -5,6 +5,8 @@
   margin-bottom: 1rem;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .SingleFile-title {
@@ -19,9 +21,19 @@
 
 .SingleFile-delete {
   position: absolute;
-  right: 0;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+
   border: none;
-  padding: 0.5rem 0.65rem;
-  background-color: rgba(255,255,255,0.7);
+  border-radius: 4px;
+  color: var(--color-white);
+  background-color: rgba(0,0,0,0.75);
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.SingleFile:hover .SingleFile-delete {
+  opacity: 1;
 }

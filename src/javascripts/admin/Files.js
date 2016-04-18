@@ -80,7 +80,7 @@ class FileList {
     const preview = this._is_image(file_name) ? `<img class="SingleFile-image" src="${this.resource_uri}${file_name}">` : ''
     const entry = `
       <li class="SingleFile">
-        <button class="SingleFile-delete" type="button">X</button>
+        <button class="SingleFile-delete" type="button">✕</button>
         ${preview}
         <p class="SingleFile-title">
           ${file_name}
