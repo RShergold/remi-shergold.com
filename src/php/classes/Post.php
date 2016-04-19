@@ -76,6 +76,7 @@ class Post {
   private function delete_page() {
     global $db;
 
+    $auth->required();
     $db->query("DELETE FROM pages WHERE slug='{$_GET['page']}' AND section_slug='{$_GET['section']}'");
     $_SESSION['message'] = ['green','page deleted'];
     header("Location: /{$_GET['section']}");
