@@ -1,10 +1,12 @@
 <?php
 
 //sleep(7);
+include_once dirname($_SERVER["DOCUMENT_ROOT"]) . "/config.php";
+
 define('RENDER_CONTENT_ONLY', isset($_GET['content_only']));
 
-$db = new mysqli('localhost', '{{database.username}}', '{{database.password}}', '{{database.name}}');
-$auth = new Auth('{{password_hash}}');
+$db = new mysqli('localhost', DB_USER, DB_PASSWORD, DB_NAME);
+$auth = new Auth(PASSWORD_HASH);
 
 Nav::init();
 

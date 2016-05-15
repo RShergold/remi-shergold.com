@@ -2,9 +2,12 @@
   "name": "remi-shergold.com",
   "version": "1.0.0",
   "author": "Remi Shergold",
-  "repository" : { 
-    "type" : "git", 
-    "url" : "https://github.com/RShergold/remi-shergold.com.git"
+  "repository": {
+    "type": "git",
+    "url": "htt ps://github.com/RShergold/remi-shergold.com.git"
+  },
+  "scripts": {
+    "deploy": "rsync -zvr --delete --exclude 'uploads' --exclude '.DS_STORE' --exclude '*.js.map' build/ root@remi-shergold.com:/var/www/beta/html "
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
@@ -12,10 +15,11 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.2",
     "gulp-cssimport": "^2.1.2",
+    "gulp-cssmin": "^0.1.7",
     "gulp-postcss": "^6.0.1",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-token-replace": "^1.0.3",
     "gulp-uglify": "^1.5.1",
     "gulp-watch": "^4.3.5",
     "postcss-cssnext": "^2.4.0",
