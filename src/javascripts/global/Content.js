@@ -20,7 +20,7 @@ function get_page_for(location) {
 
       //return page from server
       var client = new XMLHttpRequest();
-      client.open('GET', `http://remi-shergold.com${path}?content_only=true`);
+      client.open('GET', `http://${window.location.host}${path}?content_only=true`);
       client.send();
 
       client.onload = function(){

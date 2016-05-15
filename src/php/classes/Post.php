@@ -65,8 +65,9 @@ class Post {
       $_SESSION['message'] = ['redStuck',"mysql error: $db->error"];
       die("/{$_GET['section']}");
     }
-    $this->id = ($db->insert_id) ? $db->insert_id : intval($_POST['id']);
-    //$this->save_images();
+    if ($db->insert_id) {
+      Files::create_dir_for_post($db->insert_id);
+    }
 
     $_SESSION['message'] = ['green','page saved'];
     header("Location: /{$_GET['section']}/{$_POST['slug']}");
@@ -99,19 +100,6 @@ class Post {
       return "UPDATE pages SET $sql_values WHERE id=$id ";
     } else {
       return "INSERT INTO pages SET section_slug='{$_GET['section']}', $sql_values";
-    }
-  }
-
-  private function save_images() {
-    if ( !array_key_exists('images',$_FILES) ) { return; }
-
-    $page_image_dir = getcwd() . "/_public/images/$this->id";
-    if (!is_dir($page_image_dir)) {
-      mkdir($page_image_dir);
-    }
-    foreach( $_FILES['images']['tmp_name'] as $image_name => $temp_file ) {
-      // TODO sanatize image_name? what happens if i post a name of ../../img.jpg
-      move_uploaded_file( $temp_file,  "$page_image_dir/$image_name");
     }
   }
 

@@ -27,5 +27,11 @@ Allow .htaccess, set environment to production
 </Directory>
 ```
 
-create `/uploads` dir in web root
+
+create `/uploads` & `/uploads/_temp` dir in web root
+
+chown to www-data:www-data 
+chmod both to 755
+
+
 
