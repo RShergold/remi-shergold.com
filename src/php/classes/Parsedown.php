@@ -21,8 +21,12 @@ class Parsedown
 
     # ~
 
-    function text($text)
+    function text($text, $uploads_uri = NULL)
     {
+
+        # stash the upload dir 
+        $this->uploads_uri = $uploads_uri;
+
         # make sure no definitions are set
         $this->DefinitionData = array();
 
@@ -1234,6 +1238,12 @@ class Parsedown
         }
 
         $Element['attributes']['href'] = str_replace(array('&', '<'), array('&amp;', '&lt;'), $Element['attributes']['href']);
+
+        # prepend $this->uploads_uri
+        if ($this->uploads_uri && preg_match('/^https?:\/\//', $Element['attributes']['href']) == 0) {
+            $Element['attributes']['href'] = $this->uploads_uri.$Element['attributes']['href'];
+
+        }
 
         return array(
             'extent' => $extent,

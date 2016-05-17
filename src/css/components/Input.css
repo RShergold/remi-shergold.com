@@ -12,7 +12,7 @@
 
 .Input-title {
   width: 100%;
-  padding: 1rem 1rem 4rem 1rem;
+  padding: 1rem;
   font-family: var(--font-sansSerif);
   font-size: 2rem;
   font-weight: 800;
@@ -21,6 +21,14 @@
   border: none;
   outline: none;
   resize: none;
+}
+
+.Input-hr {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-brand);
+  margin: 0 auto;
 }
 
 .Input-toolbar {

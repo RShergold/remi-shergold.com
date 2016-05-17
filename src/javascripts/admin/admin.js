@@ -12,12 +12,13 @@ import Files from './Files'
 const form = document.getElementById('js-inputForm')
 
 if (form) {
+  const post_id = form.elements['id'] ? form.elements['id'].value : '_temp' 
+  
   init_tabs('js-inputFrame')
   init_growing_text_areas()
   init_auto_slug()
-  init_ajax_preview()
+  init_ajax_preview(post_id)
 
-  const post_id = form.elements['id'] ? form.elements['id'].value : '_temp' 
   const files = new Files(post_id)
   files.list()
 }

@@ -41,7 +41,7 @@ class Post {
 
   public function html_content() {
     $Parsedown = new Parsedown();
-    return $Parsedown->text($this->content);
+    return $Parsedown->text($this->content, "/uploads/$this->id/");
   }
 
   // Actions 
